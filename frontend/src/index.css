@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  /* Clean white palette with charcoal type and a restrained walnut accent */
+  --color-canvas: #ffffff;
+  --color-surface: #f7f7f6;
+  --color-paper: #ffffff;
+  --color-sand: #f2f2f0;
+  --color-linen: #d9d9d6;
+  --color-line: #e7e7e4;
+  --color-ink: #1c1c1c;
+  --color-ink-soft: #3b3b3b;
+  --color-muted: #6f6f6f;
+  --color-accent: #9a7650;
+  --color-accent-dark: #7a5a3a;
+
+  --color-success: #4f6b4a;
+  --color-warning: #8a6a2f;
+  --color-danger: #8d4a3e;
+
+  --shadow-soft: 0 1px 2px rgb(31 29 27 / 0.04), 0 8px 24px -12px rgb(31 29 27 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(31 29 27 / 0.04), 0 18px 40px -18px rgb(31 29 27 / 0.22);
+
+  --ease-gentle: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-[13px] font-semibold uppercase tracking-[0.14em] transition-colors duration-300;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-canvas font-sans text-ink;
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-ink;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  ::selection {
+    background: var(--color-linen);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-dark);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-1360px px-4 sm:px-6 lg:px-10;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-accent-dark;
+  }
+
+  .btn-primary {
+    @apply btn bg-ink text-canvas hover:bg-ink-soft;
+  }
+  .btn-light {
+    @apply btn bg-paper text-ink hover:bg-sand;
+  }
+  .btn-outline {
+    @apply btn border border-ink/80 text-ink hover:bg-ink hover:text-canvas;
+  }
+
+  .link-underline {
+    @apply relative inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.14em];
+  }
+  .link-underline::after {
+    content: "";
+    @apply absolute -bottom-1 left-0 h-px w-full origin-left bg-current transition-transform duration-300;
+  }
+  .link-underline:hover::after {
+    transform: scaleX(0.4);
+  }
+
+  .field {
+    @apply w-full border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted/70 transition-colors focus:border-ink focus:outline-none;
+  }
+
+  .skeleton {
+    @apply animate-pulse bg-sand;
+  }
+}
+
+/* Dual-thumb price slider: two stacked range inputs with only their thumbs interactive. */
+.range-thumb {
+  pointer-events: none;
+  appearance: none;
+  background: transparent;
+}
+.range-thumb::-webkit-slider-thumb {
+  pointer-events: auto;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 9999px;
+  background: var(--color-paper);
+  border: 2px solid var(--color-ink);
+  cursor: pointer;
+}
+.range-thumb::-moz-range-thumb {
+  pointer-events: auto;
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--color-paper);
+  border: 2px solid var(--color-ink);
+  cursor: pointer;
+}
+.range-thumb:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid var(--color-accent-dark);
+  outline-offset: 2px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes heroProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
