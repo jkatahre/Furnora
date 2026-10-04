@@ -190,7 +190,7 @@ function Hero() {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="relative h-[78vh] min-h-520px max-h-880px w-full overflow-hidden bg-ink-soft">
+      <div className="relative h-[78vh] min-h-[520px] max-h-[880px] w-full overflow-hidden bg-ink-soft">
         {heroSlides.map((s, i) => (
           <img
             key={s.image}
@@ -298,7 +298,7 @@ function PromoBanner() {
           src={siteImages.promo}
           alt="A bright living room with a grey corner sofa and an oak coffee table"
           tone="dark"
-          className="aspect-4/3 md:aspect-auto md:min-h-480px"
+          className="aspect-4/3 md:aspect-auto md:min-h-[480px]"
         />
         <div className="flex flex-col justify-center px-8 py-14 text-canvas sm:px-14 lg:px-20">
           <p className="eyebrow text-accent">The Autumn Edit</p>

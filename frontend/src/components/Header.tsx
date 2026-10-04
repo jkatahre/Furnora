@@ -73,7 +73,7 @@ export default function Header() {
         scrolled ? "border-line bg-canvas/95 backdrop-blur-md" : "border-transparent bg-canvas"
       }`}
     >
-      <div className="container-page flex h-72px items-center justify-between gap-6">
+      <div className="container-page flex h-[72px] items-center justify-between gap-6">
         <Logo />
 
         <nav aria-label="Main" className="hidden md:block">
@@ -119,7 +119,7 @@ export default function Header() {
           aria-modal="true"
           aria-label="Search"
         >
-          <div className="container-page flex h-72px items-center justify-between">
+          <div className="container-page flex h-[72px] items-center justify-between">
             <Logo />
             <button type="button" onClick={() => setSearchOpen(false)} className="-mr-2 p-2" aria-label="Close search">
               <CloseIcon width={24} height={24} />
@@ -153,7 +153,7 @@ export default function Header() {
           aria-modal="true"
           aria-label="Menu"
         >
-          <div className="container-page flex h-72px shrink-0 items-center justify-between">
+          <div className="container-page flex h-[72px] shrink-0 items-center justify-between">
             <Logo />
             <button type="button" onClick={() => setMenuOpen(false)} className="-mr-2 p-2" aria-label="Close menu">
               <CloseIcon width={24} height={24} />
