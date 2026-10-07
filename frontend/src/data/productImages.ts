@@ -171,6 +171,10 @@ export const productImageFiles: Record<string, ProductImageSet> = {
   "venetian-mirror-walnut-dresser": { folder: "dressing", main: "24.webp" },
   "marquetry-dresser-with-venetian-mirror": { folder: "dressing", main: "25.webp" },
   "walnut-mirror-shelf-dressing-unit": { folder: "dressing", main: "26.webp" },
+  "duo-nesting-coffee-tables": { folder: "Coffee Tables", main: "Coffee_Tables_1.webp" },
+  "prism-solid-oak-coffee-table": { folder: "Coffee Tables", main: "Coffee_Tables_2.webp" },
+  "bone-inlay-nesting-coffee-tables": { folder: "Coffee Tables", main: "Coffee_Tables_3.webp" },
+  "rattan-outdoor-lounge-set": { folder: "Coffee Tables", main: "Coffee_Tables_4.webp" },
 };
 
 /** Rows of the `product_images` table. */

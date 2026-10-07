@@ -1,9 +1,10 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import About from "./pages/About";
 import Catalog from "./pages/Catalog";
 import Categories from "./pages/Categories";
 import Contact from "./pages/Contact";
+import CustomFurniturePage from "./pages/CustomFurniturePage";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import ProductDetails from "./pages/ProductDetails";
@@ -17,8 +18,10 @@ export default function App() {
           <Route path="catalog" element={<Catalog />} />
           <Route path="products/:slug" element={<ProductDetails />} />
           <Route path="categories" element={<Categories />} />
+          <Route path="custom-furniture" element={<CustomFurniturePage />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="showroom" element={<Navigate to="/contact" replace />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

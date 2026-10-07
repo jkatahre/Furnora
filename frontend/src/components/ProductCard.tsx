@@ -1,86 +1,76 @@
 import { Link } from "react-router-dom";
-import type { Product } from "../types/product";
-import { discountPercent, hasDiscount, isNewArrival } from "../utils/format";
+import { store } from "../config/store";
 import { mainImageUrl } from "../data/productImages";
-import { ArrowRightIcon } from "./Icons";
+import type { Product } from "../types/product";
+import { whatsappLink } from "../utils/contact";
+import { discountPercent, hasDiscount, isCustomisable, isNewArrival, priceMode, showsPrice, statusLabels } from "../utils/format";
+import { WhatsAppIcon } from "./Icons";
 import PriceTag from "./PriceTag";
 import SmartImage from "./SmartImage";
-import StatusBadge from "./StatusBadge";
 
 interface ProductCardProps {
   product: Product;
-  categoryName?: string;
   priority?: boolean;
+  /** Shows a "Bestseller" badge. */
+  bestseller?: boolean;
 }
 
-export default function ProductCard({ product, categoryName, priority }: ProductCardProps) {
-  const unavailable = product.status === "inactive";
+/** Image first, then name, material, price, one selling point and a WhatsApp button. */
+export default function ProductCard({ product, priority, bestseller }: ProductCardProps) {
+  const unavailable = product.status !== "active";
+  const usp = product.usp ?? (isCustomisable(product) ? "Customisable size & finish" : product.size);
+  const fixedPrice = showsPrice(product) && priceMode(product) === "fixed";
+  const cta = fixedPrice ? (store.pricing.bestPriceButton ? "Get Best Price" : "Enquire") : "Get Price";
+
   return (
     <article className="group relative flex h-full flex-col">
-      <div className="relative overflow-hidden bg-sand shadow-none transition-shadow duration-500 ease-gentle group-hover:shadow-lift">
+      <div className="relative overflow-hidden rounded-xl bg-sand">
         <SmartImage
           src={mainImageUrl(product.slug)}
           alt={product.name}
           fallbackLabel={product.name}
           priority={priority}
           fit="auto"
-          className={`aspect-[4/3] ${unavailable ? "opacity-70" : ""}`}
+          className={`aspect-square sm:aspect-[4/3.4] ${unavailable ? "opacity-75" : ""}`}
           imgClassName="group-hover:scale-[1.04]"
         />
-        <div className="pointer-events-none absolute left-3 top-3 flex flex-col items-start gap-1.5">
-          {hasDiscount(product) && (
-            <span className="bg-ink px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-canvas">
-              -{discountPercent(product)}%
-            </span>
+        <div className="pointer-events-none absolute left-2 top-2 flex flex-col items-start gap-1 sm:left-3 sm:top-3">
+          {showsPrice(product) && hasDiscount(product) && (
+            <span className="rounded-md bg-sale px-2 py-0.5 text-[11px] font-bold text-white sm:text-xs">{discountPercent(product)}% OFF</span>
           )}
-          {product.status === "active" && isNewArrival(product) && (
-            <span className="bg-paper px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-ink">
-              New
-            </span>
+          {bestseller && <span className="rounded-md bg-ink px-2 py-0.5 text-[11px] font-bold text-white sm:text-xs">Bestseller</span>}
+          {!bestseller && product.status === "active" && isNewArrival(product) && (
+            <span className="rounded-md bg-paper px-2 py-0.5 text-[11px] font-bold text-ink sm:text-xs">New</span>
           )}
+          {unavailable && <span className="rounded-md bg-paper px-2 py-0.5 text-[11px] font-bold text-ink sm:text-xs">{statusLabels[product.status]}</span>}
         </div>
-        {product.status !== "active" && (
-          <span className="absolute right-3 top-3 bg-paper/95 px-2.5 py-1">
-            <StatusBadge status={product.status} />
-          </span>
-        )}
       </div>
 
-      <div className="flex flex-1 flex-col pt-5">
-        {categoryName && <p className="eyebrow text-[10px] text-muted">{categoryName}</p>}
-        <h3 className="mt-1.5 font-display text-[1.45rem] leading-tight">
-          <Link
-            to={`/products/${product.slug}`}
-            className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none"
-          >
+      <div className="flex flex-1 flex-col pt-3">
+        <h3 className="line-clamp-2 text-[14px] font-semibold leading-snug sm:text-[15px]">
+          <Link to={`/products/${product.slug}`} className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none">
             {product.name}
           </Link>
         </h3>
-        <p className="mt-2 line-clamp-2 text-[13px] leading-relaxed text-muted">{product.description}</p>
-        <p className="mt-2.5 text-[13px] text-ink-soft">
-          {product.material} <span className="text-linen">•</span> {product.style}
-        </p>
-
-        <div className="mt-auto pt-4">
+        <p className="mt-1 truncate text-[13px] text-brand">{product.material}</p>
+        <div className="mt-2">
           <PriceTag product={product} />
-          <div className="mt-4 flex items-center justify-between border-t border-line pt-4">
-            <StatusBadge status={product.status} />
-            <span
-              aria-hidden="true"
-              className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink transition-colors group-hover:text-accent-dark"
-            >
-              View Details
-              <ArrowRightIcon
-                width={14}
-                height={14}
-                className="transition-transform duration-300 ease-gentle group-hover:translate-x-1"
-              />
-            </span>
-          </div>
+        </div>
+        {usp && <p className="mt-1.5 truncate text-[12px] text-muted sm:text-[13px]">✓ {usp}</p>}
+
+        <div className="mt-auto pt-3">
+          <a
+            href={whatsappLink(cta === "Enquire" ? "product" : "price", product)}
+            target="_blank"
+            rel="noopener"
+            className="relative z-10 flex min-h-11 w-full items-center justify-center gap-1.5 rounded-lg border border-whatsapp/30 text-[13px] font-semibold text-whatsapp transition-colors hover:bg-whatsapp hover:text-white"
+          >
+            <WhatsAppIcon width={18} height={18} /> {cta}
+          </a>
         </div>
       </div>
       {/* Keyboard focus ring for the stretched link */}
-      <span className="pointer-events-none absolute -inset-2 hidden outline-2 outline-offset-2 outline-accent-dark group-has-[a:focus-visible]:block" />
+      <span className="pointer-events-none absolute -inset-1.5 hidden rounded-xl outline-2 outline-offset-2 outline-brand group-has-[h3_a:focus-visible]:block" />
     </article>
   );
 }

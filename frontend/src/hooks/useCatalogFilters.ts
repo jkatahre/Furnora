@@ -3,12 +3,14 @@ import { useSearchParams } from "react-router-dom";
 import type { CatalogFilters, ProductStatus, SortOption } from "../types/product";
 import { emptyFilters, sortLabels, statusOrder } from "../utils/catalog";
 
-type ListKey = "categories" | "brands" | "materials" | "styles" | "statuses";
+export type ListKey = "categories" | "rooms" | "materials" | "colors" | "sizes" | "styles" | "statuses";
 
 const listParams: Record<ListKey, string> = {
   categories: "category",
-  brands: "brand",
+  rooms: "room",
   materials: "material",
+  colors: "colour",
+  sizes: "size",
   styles: "style",
   statuses: "status",
 };
@@ -32,8 +34,10 @@ export function useCatalogFilters() {
     return {
       query: params.get("q") ?? "",
       categories: readList(params, listParams.categories),
-      brands: readList(params, listParams.brands),
+      rooms: readList(params, listParams.rooms),
       materials: readList(params, listParams.materials),
+      colors: readList(params, listParams.colors),
+      sizes: readList(params, listParams.sizes),
       styles: readList(params, listParams.styles),
       statuses: readList(params, listParams.statuses).filter((s): s is ProductStatus =>
         statusOrder.includes(s as ProductStatus),
@@ -74,6 +78,13 @@ export function useCatalogFilters() {
     [update],
   );
 
+  /** Replaces a list filter with a single value (or clears it). */
+  const setOnly = useCallback(
+    (key: ListKey, value: string | null) =>
+      update((next) => (value ? next.set(listParams[key], value) : next.delete(listParams[key]))),
+    [update],
+  );
+
   const setPrice = useCallback(
     (range: { min: number; max: number } | null) =>
       update((next) => {
@@ -103,14 +114,9 @@ export function useCatalogFilters() {
   );
 
   const activeCount =
-    filters.categories.length +
-    filters.brands.length +
-    filters.materials.length +
-    filters.styles.length +
-    filters.statuses.length +
-    (filters.price ? 1 : 0);
+    (Object.keys(listParams) as ListKey[]).reduce((sum, key) => sum + filters[key].length, 0) + (filters.price ? 1 : 0);
 
-  return { filters, setQuery, toggleValue, setPrice, setSort, clearAll, activeCount };
+  return { filters, setQuery, toggleValue, setOnly, setPrice, setSort, clearAll, activeCount };
 }
 
 export type CatalogFilterControls = ReturnType<typeof useCatalogFilters>;

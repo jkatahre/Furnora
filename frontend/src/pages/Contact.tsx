@@ -1,122 +1,76 @@
-import { useEffect, useState, type FormEvent, type ReactNode } from "react";
-import { useSearchParams } from "react-router-dom";
-import { MailIcon, PhoneIcon, PinIcon } from "../components/Icons";
-import { products } from "../data/products";
+import { useEffect } from "react";
+import { MailIcon, PhoneIcon, WhatsAppIcon } from "../components/Icons";
+import Showroom from "../components/sections/Showroom";
+import { store } from "../config/store";
+import { useEnquiry } from "../context/EnquiryContext";
+import { telUrl, whatsappLink } from "../utils/contact";
 
-/** Replace with the real studio inbox before launch. */
-const CONTACT_EMAIL = "hello@furnora.example";
-
+/** Visit us & contact: showroom first, then every way to reach the store. */
 export default function Contact() {
-  const [params] = useSearchParams();
-  const product = products.find((p) => p.slug === params.get("product"));
-
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState(
-    product ? `I'd like to know more about the ${product.name} (${product.sku}).` : "",
-  );
+  const enquire = useEnquiry();
 
   useEffect(() => {
-    document.title = "Contact — Furnora";
+    document.title = `Visit our showroom · ${store.name}`;
   }, []);
 
-  // No backend yet: hand the enquiry to the visitor's email app.
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    const subject = product ? `Enquiry: ${product.name} (${product.sku})` : "Enquiry from furnora website";
-    const body = `${message}\n\n— ${name}\n${email}`;
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
-
   return (
-    <div className="container-page pt-12 md:pt-16">
-      <div className="grid gap-16 lg:grid-cols-12">
-        <div className="lg:col-span-5">
-          <p className="eyebrow">Contact</p>
-          <h1 className="mt-5 text-5xl sm:text-6xl">We'd love to hear from you</h1>
-          <p className="mt-6 max-w-md text-muted">
-            Questions about a piece, its materials or dimensions? Our design consultants are happy to help.
-          </p>
-
-          <ul className="mt-12 space-y-7">
-            <ContactItem icon={<MailIcon />} label="Email">
-              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-accent-dark">
-                {CONTACT_EMAIL}
-              </a>
-            </ContactItem>
-            <ContactItem icon={<PhoneIcon />} label="Phone">
-              +91 00000 00000
-            </ContactItem>
-            <ContactItem icon={<PinIcon />} label="Showroom">
-              Showroom address coming soon
-            </ContactItem>
-          </ul>
-        </div>
-
-        <form onSubmit={handleSubmit} className="bg-surface p-6 sm:p-10 lg:col-span-7">
-          <h2 className="text-3xl">Send an enquiry</h2>
-          {product && (
-            <p className="mt-3 text-sm text-muted">
-              Regarding <span className="font-semibold text-ink">{product.name}</span> · {product.sku}
-            </p>
-          )}
-          <div className="mt-8 grid gap-5 sm:grid-cols-2">
-            <Field label="Name" htmlFor="name">
-              <input id="name" required className="field" value={name} onChange={(e) => setName(e.target.value)} autoComplete="name" />
-            </Field>
-            <Field label="Email" htmlFor="email">
-              <input
-                id="email"
-                type="email"
-                required
-                className="field"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                autoComplete="email"
-              />
-            </Field>
-            <div className="sm:col-span-2">
-              <Field label="Message" htmlFor="message">
-                <textarea
-                  id="message"
-                  required
-                  rows={6}
-                  className="field resize-y"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                />
-              </Field>
-            </div>
-          </div>
-          <button type="submit" className="btn-primary mt-8 w-full sm:w-auto">
-            Send enquiry
-          </button>
-          <p className="mt-4 text-xs text-muted">This opens your email app with the message ready to send.</p>
-        </form>
+    <>
+      <div className="-mt-8 md:-mt-12">
+        <Showroom heading="h1" />
       </div>
-    </div>
+
+      <section className="container-page mt-14 md:mt-20">
+        <h2 className="section-title">Talk to us</h2>
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <ContactCard href={whatsappLink("general")} external icon={<WhatsAppIcon width={26} height={26} />} title="WhatsApp" detail="Fastest reply" tone="whatsapp" />
+          <ContactCard href={telUrl} icon={<PhoneIcon width={26} height={26} />} title="Call" detail={store.contact.phone} />
+          <ContactCard href={`mailto:${store.contact.email}`} icon={<MailIcon width={26} height={26} />} title="Email" detail={store.contact.email} />
+          <li>
+            <button
+              type="button"
+              onClick={() => enquire()}
+              className="flex h-full min-h-24 w-full flex-col justify-center rounded-xl bg-ink p-5 text-left text-white hover:bg-ink-soft"
+            >
+              <span className="text-lg font-bold">Send an enquiry</span>
+              <span className="text-sm text-white/75">Takes 10 seconds</span>
+            </button>
+          </li>
+        </ul>
+      </section>
+    </>
   );
 }
 
-function ContactItem({ icon, label, children }: { icon: ReactNode; label: string; children: ReactNode }) {
+function ContactCard({
+  href,
+  icon,
+  title,
+  detail,
+  external,
+  tone,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  title: string;
+  detail: string;
+  external?: boolean;
+  tone?: "whatsapp";
+}) {
   return (
-    <li className="flex gap-4">
-      <span className="mt-0.5 text-accent-dark">{icon}</span>
-      <div>
-        <p className="text-[11px] uppercase tracking-[0.18em] text-muted">{label}</p>
-        <p className="mt-1 text-ink">{children}</p>
-      </div>
+    <li>
+      <a
+        href={href}
+        {...(external ? { target: "_blank", rel: "noopener" } : {})}
+        className={`flex h-full min-h-24 items-center gap-4 rounded-xl border p-5 transition-colors ${
+          tone === "whatsapp" ? "border-whatsapp/30 bg-whatsapp/5 text-whatsapp hover:bg-whatsapp/10" : "border-line hover:border-ink/30"
+        }`}
+      >
+        {icon}
+        <span className="min-w-0">
+          <span className="block text-lg font-bold text-ink">{title}</span>
+          <span className="block truncate text-sm text-muted">{detail}</span>
+        </span>
+      </a>
     </li>
-  );
-}
-
-function Field({ label, htmlFor, children }: { label: string; htmlFor: string; children: ReactNode }) {
-  return (
-    <div>
-      <label htmlFor={htmlFor} className="mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">
-        {label}
-      </label>
-      {children}
-    </div>
   );
 }

@@ -4,17 +4,11 @@ All images are **.webp** files. A missing image shows a neutral placeholder, so 
 
 ## Banners (`banners/`)
 
-| File | Used for |
-| --- | --- |
-| `banners/banner_1.webp` | Home hero slideshow: bedroom slide |
-| `banners/banner_2.webp` | Home hero slideshow: living room slide (first), and the promotional banner |
-| `banners/banner_3.webp` | Home hero slideshow: dining room slide, and the About page image |
-
-To change which banner appears where, edit `src/utils/images.ts`.
+The hero image, showroom photos, room images and recent-work photos are all set in `src/config/store.ts`. Point them at any file in `public/images/`.
 
 ## Products (`products/`)
 
-Product photos are grouped into 8 folders by furniture type:
+Product photos are grouped into 9 folders by furniture type:
 
 | Folder | Category |
 | --- | --- |
@@ -26,6 +20,7 @@ Product photos are grouped into 8 folders by furniture type:
 | `products/dining/` | Dining Tables |
 | `products/wardrobe/` | Wardrobes |
 | `products/dressing/` | Dressing Tables |
+| `products/Coffee Tables/` | Coffee Tables and Outdoor |
 
 Which photo belongs to which product is listed in `src/data/productImages.ts`.
 
@@ -232,4 +227,4 @@ Available keys: `main`, `front`, `side`, `back`, `lifestyle`, `detail`.
 
 A category card uses `categories/<category-slug>.webp` if it exists. Otherwise it uses the first product photo in that category, and a placeholder if there is none.
 
-Category slugs: `sofas`, `l-shape-sofas`, `sofa-sets`, `beds`, `chairs`, `dining-tables`, `wardrobes`, `dressing-tables`, `coffee-tables`, `study-tables`, `tv-units`, `side-tables`, `bookshelves`, `cabinets`, `recliners`.
+Category slugs are listed in `src/data/categories.ts`, e.g. `sofas`, `beds`, `wardrobes`, `dining-tables`, `coffee-tables`, `outdoor`.

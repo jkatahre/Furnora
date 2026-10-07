@@ -10,7 +10,7 @@ interface SortDropdownProps {
 export default function SortDropdown({ value, onChange }: SortDropdownProps) {
   return (
     <div className="flex items-center gap-3">
-      <label htmlFor="sort" className="hidden text-xs font-semibold uppercase tracking-[0.16em] text-muted sm:block">
+      <label htmlFor="sort" className="hidden text-sm text-muted sm:block">
         Sort by
       </label>
       <div className="relative">
@@ -18,7 +18,7 @@ export default function SortDropdown({ value, onChange }: SortDropdownProps) {
           id="sort"
           value={value}
           onChange={(e) => onChange(e.target.value as SortOption)}
-          className="cursor-pointer appearance-none border border-line bg-paper py-2.5 pl-4 pr-10 text-sm text-ink transition-colors hover:border-ink/40 focus:border-ink focus:outline-none"
+          className="min-h-11 cursor-pointer appearance-none rounded-lg border border-line bg-paper pl-3 pr-9 text-sm font-medium text-ink transition-colors hover:border-ink/40 focus:border-ink focus:outline-none"
           aria-label="Sort products"
         >
           {(Object.keys(sortLabels) as SortOption[]).map((option) => (
