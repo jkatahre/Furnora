@@ -33,7 +33,7 @@ export default function Reviews({ productSlug, title = "What our customers say" 
   );
   if (reviews.length === 0) return null;
   return (
-    <section className="container-page mt-14 md:mt-20">
+    <section className="container-page mt-10 md:mt-20">
       <SectionHeading title={title} action={<div className="hidden sm:block"><RatingBadge /></div>} />
       <RatingBadge className="-mt-3 mb-4 sm:hidden" />
       <ul className="scroll-row md:mx-0 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:px-0 lg:grid-cols-4">

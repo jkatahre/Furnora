@@ -14,7 +14,7 @@ export function visibleCategories(categories: Category[], stats: Record<number, 
 export default function ShopByCategory({ categories, stats }: { categories: Category[]; stats: Record<number, CategoryStats> }) {
   const visible = visibleCategories(categories, stats);
   return (
-    <section className="container-page mt-12 md:mt-16">
+    <section className="container-page mt-8 md:mt-16">
       <SectionHeading
         title="Shop by category"
         action={

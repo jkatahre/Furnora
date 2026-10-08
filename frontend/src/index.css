@@ -22,9 +22,10 @@
   --color-accent: var(--color-brand);
   --color-accent-dark: var(--color-brand-dark);
 
-  /* Darker than WhatsApp's own green so white text stays readable. */
-  --color-whatsapp: #167c3e;
-  --color-whatsapp-dark: #10622f;
+  /* WhatsApp brand colours. */
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #1ebe5d;
+  --color-whatsapp-deep: #128c7e;
 
   --color-success: #2f7a3e;
   --color-warning: #94650f;
@@ -36,6 +37,10 @@
   --shadow-lift: 0 2px 4px rgb(31 26 22 / 0.05), 0 18px 40px -18px rgb(31 26 22 / 0.25);
 
   --ease-gentle: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@utility container-page {
+  @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10;
 }
 
 @utility btn {
@@ -91,10 +96,6 @@
 }
 
 @layer components {
-  .container-page {
-    @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-10;
-  }
-
   .eyebrow {
     @apply text-xs font-semibold uppercase tracking-[0.14em] text-brand;
   }
@@ -111,6 +112,7 @@
   }
   .btn-whatsapp {
     @apply btn bg-whatsapp text-white hover:bg-whatsapp-dark;
+    text-shadow: 0 1px 1px rgb(0 0 0 / 0.12);
   }
   .btn-light {
     @apply btn bg-paper text-ink hover:bg-sand;

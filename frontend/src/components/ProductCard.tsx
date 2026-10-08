@@ -63,7 +63,7 @@ export default function ProductCard({ product, priority, bestseller }: ProductCa
             href={whatsappLink(cta === "Enquire" ? "product" : "price", product)}
             target="_blank"
             rel="noopener"
-            className="relative z-10 flex min-h-11 w-full items-center justify-center gap-1.5 rounded-lg border border-whatsapp/30 text-[13px] font-semibold text-whatsapp transition-colors hover:bg-whatsapp hover:text-white"
+            className="btn-whatsapp relative z-10 min-h-10 w-full gap-1.5 px-2 text-[13px]"
           >
             <WhatsAppIcon width={18} height={18} /> {cta}
           </a>

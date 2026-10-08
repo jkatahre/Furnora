@@ -114,7 +114,7 @@ export default function ProductDetails() {
       </div>
 
       {related.length > 0 && (
-        <section className="container-page mt-14 md:mt-20">
+        <section className="container-page mt-10 md:mt-20">
           <SectionHeading title="You may also like" />
           <ProductGrid products={related} />
         </section>

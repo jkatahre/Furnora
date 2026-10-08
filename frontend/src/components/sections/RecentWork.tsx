@@ -8,7 +8,7 @@ export default function RecentWork() {
   const { recentWork } = store;
   if (recentWork.images.length === 0) return null;
   return (
-    <section className="container-page mt-14 md:mt-20">
+    <section className="container-page mt-10 md:mt-20">
       <SectionHeading
         title="Recently delivered"
         action={

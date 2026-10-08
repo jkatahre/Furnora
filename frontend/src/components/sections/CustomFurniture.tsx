@@ -11,7 +11,7 @@ export default function CustomFurniture({ heading = "h2" }: { heading?: "h1" | "
   const { custom } = store;
   const Heading = heading;
   return (
-    <section className="container-page mt-14 md:mt-20">
+    <section className="container-page mt-10 md:mt-20">
       <div className="grid overflow-hidden rounded-2xl bg-ink text-white md:grid-cols-2">
         <div className="relative">
           <SmartImage src={custom.image} alt="A sofa made to a customer's measurements" tone="dark" className="aspect-[4/3] h-full md:aspect-auto md:min-h-[460px]" />

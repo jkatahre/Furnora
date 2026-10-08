@@ -7,7 +7,7 @@ import StoreIcon from "../StoreIcon";
 export default function WhyChooseUs() {
   if (store.trust.length === 0) return null;
   return (
-    <section className="mt-14 bg-surface py-12 md:mt-20 md:py-16">
+    <section className="mt-10 bg-surface py-10 md:mt-20 md:py-16">
       <div className="container-page">
         <SectionHeading title={`Why buy from ${store.name}`} action={<div className="hidden sm:block"><RatingBadge /></div>} />
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">

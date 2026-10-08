@@ -1,7 +1,8 @@
 import { store } from "../../config/store";
-import { directionsUrl, hoursTable, mapEmbedUrl, openStatus, telUrl, whatsappLink } from "../../utils/contact";
+import { directionsUrl, hoursTable, openStatus, telUrl, whatsappLink } from "../../utils/contact";
 import { formatPrice } from "../../utils/format";
 import { CheckIcon, ClockIcon, DirectionsIcon, PhoneIcon, PinIcon, TruckIcon, WhatsAppIcon } from "../Icons";
+import MapEmbed from "../MapEmbed";
 import SmartImage from "../SmartImage";
 
 /** The full "Visit our showroom" block: photos, address, hours, map and contact buttons. */
@@ -12,7 +13,7 @@ export default function Showroom({ heading = "h2", showMap = true }: { heading?:
   const Heading = heading;
 
   return (
-    <section id="showroom" className="container-page mt-14 scroll-mt-24 md:mt-20">
+    <section id="showroom" className="container-page mt-10 scroll-mt-24 md:mt-20">
       <div className="grid gap-6 lg:grid-cols-12 lg:gap-10">
         {/* Photos */}
         <div className="space-y-2 sm:space-y-3 lg:col-span-6">
@@ -89,17 +90,7 @@ export default function Showroom({ heading = "h2", showMap = true }: { heading?:
         </div>
       </div>
 
-      {showMap && (
-        <div className="mt-6 overflow-hidden rounded-xl border border-line">
-          <iframe
-            title={`Map to ${store.name}`}
-            src={mapEmbedUrl()}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="block h-[280px] w-full md:h-[360px]"
-          />
-        </div>
-      )}
+      {showMap && <MapEmbed className="mt-6 hidden md:block" />}
     </section>
   );
 }

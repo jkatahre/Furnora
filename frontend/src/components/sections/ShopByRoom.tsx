@@ -22,7 +22,7 @@ export default function ShopByRoom({ categories, stats }: { categories: Category
   const rooms = roomsWithProducts(categories, stats);
   if (rooms.length === 0) return null;
   return (
-    <section className="container-page mt-14 md:mt-20">
+    <section className="container-page mt-10 md:mt-20">
       <SectionHeading title="Shop by room" />
       <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         {rooms.map((room, i) => (

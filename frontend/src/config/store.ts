@@ -155,6 +155,21 @@ export const store = {
     subtitle: "Made to your size. Free delivery in Bhopal.",
     /** Small facts under the buttons. */
     highlights: ["Since 2012", "Made in India", "Free installation"],
+    /** Price tag pinned on the photo for the piece shown. Set to null to hide. SAMPLE */
+    tag: { label: "Corner sofa, as shown", price: "from ₹80,999", link: "/catalog?category=l-shape-sofas" } as {
+      label: string;
+      price: string;
+      link: string;
+    } | null,
+    /** Shortcut chips under the hero. */
+    quickLinks: [
+      { label: "Sofas", link: "/catalog?category=sofas,l-shape-sofas,sofa-sets" },
+      { label: "Beds", link: "/catalog?category=beds" },
+      { label: "Dining", link: "/catalog?category=dining-tables" },
+      { label: "Wardrobes", link: "/catalog?category=wardrobes" },
+      { label: "Coffee Tables", link: "/catalog?category=coffee-tables" },
+      { label: "Custom Furniture", link: "/custom-furniture" },
+    ],
   },
 
   // ── Offers (home page offer cards). Leave empty to hide. ───────────────
@@ -226,6 +241,40 @@ export const store = {
     },
   ] as { name: string; city: string; rating: number; text: string; product?: string; productSlug?: string; date: string }[],
 
+  /**
+   * Customer stories for the Testimonials section: a photo of the delivered piece with a quote.
+   * SAMPLE: replace with real customers (with their permission).
+   */
+  testimonials: [
+    {
+      name: "Ritika & Saurabh Sharma",
+      city: "Arera Colony, Bhopal",
+      photo: "/images/banners/banner_3.webp",
+      product: "6 seater sheesham dining set",
+      rating: 5,
+      quote:
+        "We wanted a dining table that fits a narrow dining area. They adjusted the width by 4 inches, matched the polish to our doors and installed it the same day it arrived.",
+    },
+    {
+      name: "Amit Patel",
+      city: "Vijay Nagar, Indore",
+      photo: "/images/products/l-shape-sofa/1.webp",
+      product: "Custom L-shape sofa",
+      rating: 5,
+      quote:
+        "I sent my room measurements on WhatsApp and got a drawing back the next day. The sofa came in 15 days, exactly the size we asked for, in the fabric I picked at the showroom.",
+    },
+    {
+      name: "Neha Verma",
+      city: "Kolar Road, Bhopal",
+      photo: "/images/banners/banner_1.webp",
+      product: "King size bed with storage",
+      rating: 5,
+      quote:
+        "Visited the showroom twice before deciding. No pressure at all. The bed is solid, the storage is huge, and the team checked in on WhatsApp a week after delivery.",
+    },
+  ] as { name: string; city: string; photo: string; product: string; rating: number; quote: string }[],
+
   // ── Rooms (Shop by Room). Rooms with no products are hidden. ───────────
   rooms: [
     { slug: "living-room", name: "Living Room", image: "/images/banners/banner_2.webp" },
@@ -269,6 +318,21 @@ export const store = {
       { src: "/images/products/dining/14.webp", caption: "6 seater dining · Shahpura" },
       { src: "/images/products/Coffee%20Tables/Coffee_Tables_3.webp", caption: "Bone inlay tables · Bawadia Kalan" },
       { src: "/images/products/wardrobe/7.webp", caption: "3 door wardrobe · Awadhpuri" },
+    ],
+  },
+
+  // ── Contact page ───────────────────────────────────────────────────────
+  contactPage: {
+    title: "Contact us",
+    /** SAMPLE: only promise a reply time you can keep. */
+    subtitle: "WhatsApp, call or walk in. We usually reply within an hour during showroom hours.",
+    /** Common questions. SAMPLE: edit to match your policies. */
+    faqs: [
+      { q: "Do you deliver outside Bhopal?", a: "Yes. See the delivery charges above, or WhatsApp us for a quote for any other city." },
+      { q: "Can I change the size, fabric or polish?", a: "Most pieces can be made to your size, in your choice of fabric and wood finish. Custom orders are ready in 15–21 days." },
+      { q: "Do you offer EMI?", a: "No-cost EMI for 3, 6 and 12 months is available on major credit cards." },
+      { q: "Is installation included?", a: "Yes. Our own carpenters deliver and install every order free of cost." },
+      { q: "Can I see the furniture before buying?", a: "Most designs are on display at our showroom. WhatsApp us the product link and we'll confirm before you visit." },
     ],
   },
 

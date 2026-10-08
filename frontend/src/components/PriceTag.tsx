@@ -36,7 +36,7 @@ export default function PriceTag({ product, size = "sm", details = false }: Pric
             <span className={`text-muted ${large ? "text-base" : "text-[13px]"}`}>
               MRP <span className="line-through">{formatPrice(product.base_price)}</span>
             </span>
-            <span className={`font-bold text-sale ${large ? "text-base" : "text-[13px]"}`}>{discountPercent(product)}% off</span>
+            <span className={`font-bold text-sale ${large ? "text-base" : "hidden text-[13px] sm:inline"}`}>{discountPercent(product)}% off</span>
           </>
         )}
       </div>
