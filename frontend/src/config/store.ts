@@ -318,7 +318,7 @@ export const store = {
     { slug: "office", name: "Office", image: "" },
     { slug: "outdoor", name: "Outdoor", image: "/images/products/Coffee%20Tables/Coffee_Tables_4.webp" },
     { slug: "kids-room", name: "Kids Room", image: "" },
-    { slug: "storage", name: "Storage", image: "/images/products/wardrobe/2.webp" },
+    { slug: "storage", name: "Storage", image: "/images/products/wardrobe/Wordrobe_2.webp" },
   ],
 
   // ── Custom furniture section ───────────────────────────────────────────
@@ -352,7 +352,7 @@ export const store = {
       { src: "/images/products/bed/Bed_25.webp", caption: "Carved four-poster bed · Indore" },
       { src: "/images/products/dining/14.webp", caption: "6 seater dining · Shahpura" },
       { src: "/images/products/Coffee%20Tables/Coffee_Tables_3.webp", caption: "Bone inlay tables · Bawadia Kalan" },
-      { src: "/images/products/wardrobe/7.webp", caption: "3 door wardrobe · Awadhpuri" },
+      { src: "/images/products/wardrobe/Wordrobe_8.webp", caption: "Walnut 4 door wardrobe · Awadhpuri" },
     ],
   },
 

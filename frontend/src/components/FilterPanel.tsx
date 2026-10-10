@@ -131,9 +131,11 @@ export default function FilterPanel({ options, products, categories, controls }:
         {list("styles", options.styles.map((s) => ({ value: s, label: s })))}
       </FilterSection>
 
-      <FilterSection title="Availability" activeCount={filters.statuses.length} defaultOpen={false}>
-        {list("statuses", options.statuses.map((s) => ({ value: s, label: statusLabels[s] })))}
-      </FilterSection>
+      {options.statuses.length > 1 && (
+        <FilterSection title="Availability" activeCount={filters.statuses.length} defaultOpen={false}>
+          {list("statuses", options.statuses.map((s) => ({ value: s, label: statusLabels[s] })))}
+        </FilterSection>
+      )}
     </div>
   );
 }

@@ -91,7 +91,7 @@ export default function ProductDetails() {
 
       <section className="container-page grid grid-cols-1 gap-6 sm:mt-5 lg:grid-cols-12 lg:gap-12">
         <div className="min-w-0 lg:col-span-7">
-          <div className="lg:sticky lg:top-24">
+          <div className="lg:sticky lg:top-[calc(6rem+var(--credit-h))]">
             <ProductGallery images={images} product={product} />
           </div>
         </div>

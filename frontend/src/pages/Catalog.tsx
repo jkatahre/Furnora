@@ -83,13 +83,13 @@ export default function Catalog() {
       <div className="container-page pt-4 lg:pt-8">
         <div className="lg:grid lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-10">
           <aside className="hidden lg:block" aria-label="Product filters">
-            <div className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto pb-10 pr-2">
+            <div className="sticky top-[calc(6rem+var(--credit-h))] max-h-[calc(100vh-7rem-var(--credit-h))] overflow-y-auto pb-10 pr-2">
               {data && <FilterPanel options={options} products={products} categories={categories} controls={controls} />}
             </div>
           </aside>
 
           <div>
-            <div className="sticky top-16 z-20 -mx-4 flex items-center justify-between gap-3 border-b border-line bg-canvas/95 px-4 py-2 backdrop-blur-md sm:-mx-6 sm:px-6 lg:static lg:mx-0 lg:bg-transparent lg:px-0 lg:pb-4 lg:pt-0">
+            <div className="sticky top-[calc(4rem+var(--credit-h))] z-20 -mx-4 flex items-center justify-between gap-3 border-b border-line bg-canvas/95 px-4 py-2 backdrop-blur-md sm:-mx-6 sm:px-6 lg:static lg:mx-0 lg:bg-transparent lg:px-0 lg:pb-4 lg:pt-0">
               <button
                 type="button"
                 onClick={() => setDrawerOpen(true)}

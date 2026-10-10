@@ -10,7 +10,7 @@ export const categories: Category[] = [
   { category_id: 15, name: "L-Shape Sofas", slug: "l-shape-sofas", description: "Corner, L & U-shape sofas", rooms: ["living-room"] },
   { category_id: 14, name: "Sofa Sets", slug: "sofa-sets", description: "3+1+1 and 3+2+1 sets", rooms: ["living-room"] },
   { category_id: 1, name: "Beds", slug: "beds", description: "King & queen size beds, with and without storage", rooms: ["bedroom"] },
-  { category_id: 7, name: "Wardrobes", slug: "wardrobes", description: "2, 3 & 4 door wardrobes", rooms: ["bedroom", "storage"] },
+  { category_id: 7, name: "Wardrobes", slug: "wardrobes", description: "2, 3, 4 & 6 door wardrobes", rooms: ["bedroom", "storage"] },
   { category_id: 4, name: "Dining Tables", slug: "dining-tables", description: "4, 6 & 8 seater dining sets", rooms: ["dining-room"] },
   { category_id: 16, name: "Dining Chairs", slug: "dining-chairs", description: "Dining chairs sold separately", rooms: ["dining-room"] },
   { category_id: 8, name: "TV Units", slug: "tv-units", description: "Wall-mounted and floor TV units", rooms: ["living-room", "storage"] },

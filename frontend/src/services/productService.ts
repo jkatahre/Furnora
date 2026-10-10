@@ -16,6 +16,9 @@ function respond<T>(value: T): Promise<T> {
 
 export class NotFoundError extends Error {}
 
+/** Products shown in listings. "Coming soon" and unavailable pieces are left out. */
+const listed = products.filter((p) => p.status === "active");
+
 /** Curated picks first, then every other product that has a photo. */
 const featuredOrder = [
   ...featuredProductIds,
@@ -24,7 +27,7 @@ const featuredOrder = [
 
 export const productService = {
   getProducts(): Promise<Product[]> {
-    return respond(products);
+    return respond(listed);
   },
 
   getCategories(): Promise<Category[]> {
@@ -36,7 +39,7 @@ export const productService = {
   },
 
   getFeaturedProducts(limit = 8): Promise<Product[]> {
-    return respond(sortProducts(products, "featured", featuredOrder).slice(0, limit));
+    return respond(sortProducts(listed, "featured", featuredOrder).slice(0, limit));
   },
 
   /** Newest products that are available and photographed. */
@@ -68,7 +71,7 @@ export const productService = {
   },
 
   getRelatedProducts(product: Product, limit = 4): Promise<Product[]> {
-    return respond(relatedProducts(product, products, limit));
+    return respond(relatedProducts(product, listed, limit));
   },
 
   /** Per category: total products and how many are available. */

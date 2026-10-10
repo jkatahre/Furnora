@@ -36,14 +36,14 @@ export function CreditBar() {
   const credit = store.credit;
   if (!credit) return null;
   return (
-    <div className="bg-ink text-white">
-      <div className="container-page flex min-h-9 items-center justify-center gap-3 py-1 text-[11px] sm:text-xs">
-        <p className="text-white/75">{credit.text}</p>
+    <div className="sticky top-0 z-50 bg-black text-white">
+      <div className="container-page flex h-9 items-center justify-center gap-3 text-[11px] sm:text-xs">
+        <p className="truncate text-white/80">{credit.text}</p>
         <a
           href={credit.url}
           target="_blank"
           rel="noopener"
-          className="shrink-0 rounded-full bg-white px-3 py-1 font-semibold text-ink transition-colors hover:bg-gold"
+          className="shrink-0 rounded-full bg-orange-500 px-3 py-1 font-bold text-black transition-colors hover:bg-orange-400"
         >
           {credit.cta}
         </a>
@@ -133,7 +133,7 @@ export default function Header() {
     <>
       <CreditBar />
       <AnnouncementBar />
-      <header className="sticky top-0 z-40 border-b border-line bg-canvas/95 backdrop-blur-md">
+      <header className="sticky top-(--credit-h) z-40 border-b border-line bg-canvas/95 backdrop-blur-md">
         <div className="container-page flex h-16 items-center justify-between gap-4 lg:h-[72px]">
           <Logo />
 

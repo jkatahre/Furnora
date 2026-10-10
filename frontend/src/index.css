@@ -54,6 +54,10 @@
 }
 
 @layer base {
+  :root {
+    --credit-h: 0px;
+  }
+
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

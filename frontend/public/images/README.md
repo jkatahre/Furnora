@@ -186,14 +186,14 @@ Available keys: `main`, `front`, `side`, `back`, `lifestyle`, `detail`.
 
 | File | Product |
 | --- | --- |
-| `1.webp` | Ivory 4 Door Wardrobe |
-| `2.webp` | Glass Front 4 Door Wardrobe |
-| `3.webp` | Organiser 2 Door Wardrobe |
-| `4.webp` | Glide 2 Door Sliding Wardrobe |
-| `5.webp` | Utility 3 Door Wardrobe |
-| `6.webp` | Duo-Tone 3 Door Wardrobe |
-| `7.webp` | Ebony Walnut 3 Door Wardrobe |
-| `8.webp` | Ivory 3 Door Wardrobe with Drawer |
+| `Wordrobe_1.webp` | Oak Duo-Tone 3 Door Wardrobe |
+| `Wordrobe_2.webp` | Fluted Oak 4 Door Wardrobe |
+| `Wordrobe_3.webp` | Oak & Charcoal 4 Door Wardrobe with Mirror |
+| `Wordrobe_4.webp` | Walnut Fluted 2 Door Wardrobe with Mirror |
+| `Wordrobe_5.webp` | Walnut 6 Door Wardrobe with Mirror & Drawer |
+| `Wordrobe_6.webp` | Charcoal 2 Door Wardrobe with Drawer |
+| `Wordrobe_7.webp` | Charcoal & Oak 4 Door Wardrobe with Drawer |
+| `Wordrobe_8.webp` | Walnut Fluted 4 Door Wardrobe |
 
 **Dressing Tables** (`products/dressing/`)
 
