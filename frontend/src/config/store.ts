@@ -55,6 +55,13 @@ export const store = {
   /** Words suggested in the search box. */
   popularSearches: ["L-shape sofa", "King size bed", "Sheesham", "6 seater dining", "3 door wardrobe", "Recliner"],
 
+  /** Thin credit strip at the very top of every page. Set to null to remove it. */
+  credit: { text: "Template designed by allaboutw3b.in", cta: "Make this yours", url: "https://allaboutw3b.in" } as {
+    text: string;
+    cta: string;
+    url: string;
+  } | null,
+
   // ── Contact ────────────────────────────────────────────────────────────
   contact: {
     /** SAMPLE: shown on the site and used for "Call" buttons. */
@@ -208,15 +215,6 @@ export const store = {
       price: string;
       link: string;
     } | null,
-    /** Shortcut chips under the hero. */
-    quickLinks: [
-      { label: "Sofas", link: "/catalog?category=sofas,l-shape-sofas,sofa-sets" },
-      { label: "Beds", link: "/catalog?category=beds" },
-      { label: "Dining", link: "/catalog?category=dining-tables" },
-      { label: "Wardrobes", link: "/catalog?category=wardrobes" },
-      { label: "Coffee Tables", link: "/catalog?category=coffee-tables" },
-      { label: "Custom Furniture", link: "/custom-furniture" },
-    ],
   },
 
   // ── Trust badges ("Why choose us"). Only list what is true. ────────────

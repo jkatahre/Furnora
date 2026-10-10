@@ -23,29 +23,29 @@ export default function ShopByCategory({ categories, stats }: { categories: Cate
           </Link>
         }
       />
-      <ul className="scroll-row md:mx-0 md:grid md:grid-cols-5 md:gap-4 md:overflow-visible md:px-0 lg:grid-cols-7">
+      <ul className="grid grid-cols-4 gap-x-2.5 gap-y-4 sm:gap-x-4 lg:grid-cols-7">
         {visible.map((category) => (
-          <li key={category.slug} className="w-[30%] shrink-0 sm:w-[22%] md:w-auto">
+          <li key={category.slug}>
             <Link to={`/catalog?category=${category.slug}`} className="group block">
               <SmartImage
                 src={categoryImage(category.slug)}
                 fallbackSrc={categoryCoverUrl(category.category_id)}
                 alt=""
                 fallbackLabel={category.name}
-                className="aspect-square rounded-xl"
+                className="aspect-square rounded-lg sm:rounded-xl"
                 imgClassName="group-hover:scale-[1.05]"
               />
-              <span className="mt-2 block text-center text-[13px] font-semibold leading-tight sm:text-sm">{category.name}</span>
+              <span className="mt-1.5 block text-center text-[11px] font-semibold leading-tight sm:mt-2 sm:text-sm">{category.name}</span>
             </Link>
           </li>
         ))}
-        <li className="w-[30%] shrink-0 sm:w-[22%] md:w-auto">
+        <li>
           <Link to="/custom-furniture" className="group block">
-            <span className="flex aspect-square flex-col items-center justify-center gap-2 rounded-xl bg-brand p-2 text-center text-white transition-colors group-hover:bg-brand-dark">
-              <PlusIcon width={28} height={28} />
-              <span className="text-[12px] font-semibold leading-tight sm:text-sm">Made to your size</span>
+            <span className="flex aspect-square flex-col items-center justify-center gap-2 rounded-lg bg-brand p-2 sm:rounded-xl text-center text-white transition-colors group-hover:bg-brand-dark">
+              <PlusIcon width={24} height={24} />
+              <span className="hidden text-sm font-semibold leading-tight sm:block">Made to your size</span>
             </span>
-            <span className="mt-2 block text-center text-[13px] font-semibold leading-tight sm:text-sm">Custom Furniture</span>
+            <span className="mt-1.5 block text-center text-[11px] font-semibold leading-tight sm:mt-2 sm:text-sm">Custom Furniture</span>
           </Link>
         </li>
       </ul>

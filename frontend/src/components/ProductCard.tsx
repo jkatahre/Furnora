@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
-import { store } from "../config/store";
 import { mainImageUrl } from "../data/productImages";
 import type { Product } from "../types/product";
-import { whatsappLink } from "../utils/contact";
-import { discountPercent, hasDiscount, isCustomisable, isNewArrival, priceMode, showsPrice, statusLabels } from "../utils/format";
+import { discountPercent, hasDiscount, isCustomisable, isNewArrival, showsPrice, statusLabels } from "../utils/format";
 import { festivalLive } from "./Festive";
-import { WhatsAppIcon } from "./Icons";
 import PriceTag from "./PriceTag";
 import SmartImage from "./SmartImage";
 
@@ -16,13 +13,11 @@ interface ProductCardProps {
   bestseller?: boolean;
 }
 
-/** Image first, then name, material, price, one selling point and a WhatsApp button. */
+/** Image first, then name, material, price and one selling point. */
 export default function ProductCard({ product, priority, bestseller }: ProductCardProps) {
   const unavailable = product.status !== "active";
   const usp = product.usp ?? (isCustomisable(product) ? "Customisable size & finish" : product.size);
-  const fixedPrice = showsPrice(product) && priceMode(product) === "fixed";
   const festive = festivalLive();
-  const cta = fixedPrice ? (store.pricing.bestPriceButton ? "Get Best Price" : "Enquire") : "Get Price";
 
   return (
     <article className="group relative flex h-full flex-col">
@@ -62,17 +57,6 @@ export default function ProductCard({ product, priority, bestseller }: ProductCa
           <PriceTag product={product} />
         </div>
         {usp && <p className="mt-1.5 hidden truncate text-[13px] text-muted sm:block">✓ {usp}</p>}
-
-        <div className="mt-auto pt-2.5 sm:pt-3">
-          <a
-            href={whatsappLink(cta === "Enquire" ? "product" : "price", product)}
-            target="_blank"
-            rel="noopener"
-            className="btn-whatsapp relative z-10 min-h-10 w-full gap-1.5 px-2 text-[12px] sm:text-[13px]"
-          >
-            <WhatsAppIcon width={18} height={18} /> {cta}
-          </a>
-        </div>
       </div>
       {/* Keyboard focus ring for the stretched link */}
       <span className="pointer-events-none absolute -inset-1.5 hidden rounded-xl outline-2 outline-offset-2 outline-brand group-has-[h3_a:focus-visible]:block" />

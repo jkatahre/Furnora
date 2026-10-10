@@ -31,6 +31,27 @@ export function Logo({ light = false, className = "" }: { light?: boolean; class
   );
 }
 
+/** "Template designed by …" strip with its call-to-action. */
+export function CreditBar() {
+  const credit = store.credit;
+  if (!credit) return null;
+  return (
+    <div className="bg-ink text-white">
+      <div className="container-page flex min-h-9 items-center justify-center gap-3 py-1 text-[11px] sm:text-xs">
+        <p className="text-white/75">{credit.text}</p>
+        <a
+          href={credit.url}
+          target="_blank"
+          rel="noopener"
+          className="shrink-0 rounded-full bg-white px-3 py-1 font-semibold text-ink transition-colors hover:bg-gold"
+        >
+          {credit.cta}
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export function AnnouncementBar() {
   const items = store.announcements;
   const [index, setIndex] = useState(0);
@@ -110,6 +131,7 @@ export default function Header() {
 
   return (
     <>
+      <CreditBar />
       <AnnouncementBar />
       <header className="sticky top-0 z-40 border-b border-line bg-canvas/95 backdrop-blur-md">
         <div className="container-page flex h-16 items-center justify-between gap-4 lg:h-[72px]">

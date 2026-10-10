@@ -12,7 +12,6 @@ export default function Hero() {
   return (
     <>
       {festivalLive() ? <FestivalBanners /> : <StoreHero />}
-      <QuickLinks />
     </>
   );
 }
@@ -194,25 +193,5 @@ function StoreHero() {
         </div>
       </div>
     </section>
-  );
-}
-
-function QuickLinks() {
-  const links = store.hero.quickLinks;
-  if (links.length === 0) return null;
-  return (
-    <nav aria-label="Popular categories" className="bg-canvas">
-      <div className="container-page">
-        <ul className="scroll-row py-3 lg:mx-0 lg:flex-wrap lg:justify-center lg:overflow-visible lg:px-0">
-          {links.map((q) => (
-            <li key={q.label}>
-              <Link to={q.link} className="chip">
-                {q.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
   );
 }
