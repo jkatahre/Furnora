@@ -23,9 +23,9 @@ export default function ShopByCategory({ categories, stats }: { categories: Cate
           </Link>
         }
       />
-      <ul className="grid grid-cols-4 gap-x-2.5 gap-y-4 sm:gap-x-4 lg:grid-cols-7">
+      <ul className="-mx-4 grid snap-x snap-mandatory scroll-px-4 auto-cols-[22%] grid-flow-col grid-rows-2 gap-x-2.5 gap-y-4 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:-mx-6 sm:scroll-px-6 sm:auto-cols-[17%] sm:gap-x-4 sm:px-6 lg:mx-0 lg:grid-flow-row lg:grid-cols-7 lg:grid-rows-none lg:overflow-visible lg:px-0 [&::-webkit-scrollbar]:hidden">
         {visible.map((category) => (
-          <li key={category.slug}>
+          <li key={category.slug} className="snap-start">
             <Link to={`/catalog?category=${category.slug}`} className="group block">
               <SmartImage
                 src={categoryImage(category.slug)}
@@ -39,7 +39,7 @@ export default function ShopByCategory({ categories, stats }: { categories: Cate
             </Link>
           </li>
         ))}
-        <li>
+        <li className="snap-start">
           <Link to="/custom-furniture" className="group block">
             <span className="flex aspect-square flex-col items-center justify-center gap-2 rounded-lg bg-brand p-2 sm:rounded-xl text-center text-white transition-colors group-hover:bg-brand-dark">
               <PlusIcon width={24} height={24} />

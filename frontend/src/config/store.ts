@@ -39,7 +39,7 @@ export const store = {
   // ── Identity ───────────────────────────────────────────────────────────
   name: "Furnora",
   /** Shown under the name in the header and footer. */
-  tagline: "Furniture Showroom · Bhopal",
+  tagline: "Furniture Showroom · Your City",
   /** Optional logo image in /public. Leave empty to use the name as a text logo. */
   logoImage: "",
 
@@ -55,9 +55,10 @@ export const store = {
   /** Words suggested in the search box. */
   popularSearches: ["L-shape sofa", "King size bed", "Sheesham", "6 seater dining", "3 door wardrobe", "Recliner"],
 
-  /** Thin credit strip at the very top of every page. Set to null to remove it. */
-  credit: { text: "Template designed by allaboutw3b.in", cta: "Make this yours", url: "https://allaboutw3b.in" } as {
+  /** Thin credit strip at the very top of every page. `linkText` inside `text` becomes a link to `url`. Set to null to remove it. */
+  credit: { text: "Template designed by allaboutw3b.in", linkText: "allaboutw3b.in", cta: "Make this yours", url: "https://allaboutw3b.in" } as {
     text: string;
+    linkText: string;
     cta: string;
     url: string;
   } | null,
@@ -86,11 +87,11 @@ export const store = {
   // ── Showroom ───────────────────────────────────────────────────────────
   showroom: {
     /** SAMPLE */
-    title: "Visit our showroom in Bhopal",
+    title: "Visit our showroom",
     /** SAMPLE */
-    addressLines: ["Plot 00, Zone-I, MP Nagar", "Near Jyoti Talkies", "Bhopal, Madhya Pradesh 462011"],
-    /** What Google Maps should search for. Usually your business name and city. SAMPLE */
-    mapQuery: "MP Nagar Zone 1, Bhopal",
+    addressLines: ["Shop No. 00, Sample Market", "Near City Centre", "Your City, State 000000"],
+    /** What Google Maps should search for: your business name and full address. SAMPLE: "India" shows a neutral map until you set it. */
+    mapQuery: "India",
     /** Optional: paste the "Embed a map" src from Google Maps for an exact pin. */
     mapEmbedUrl: "",
     /** SAMPLE */
@@ -111,12 +112,11 @@ export const store = {
   // ── Delivery ───────────────────────────────────────────────────────────
   /** SAMPLE: the cities you deliver to. `fee: 0` shows as "Free delivery". */
   deliveryAreas: [
-    { city: "Bhopal", fee: 0, time: "2–4 days" },
-    { city: "Indore", fee: 1500, time: "4–6 days" },
-    { city: "Sehore", fee: 500, time: "3–5 days" },
-    { city: "Vidisha", fee: 800, time: "3–5 days" },
-    { city: "Raisen", fee: 800, time: "3–5 days" },
-    { city: "Jabalpur", fee: 2500, time: "6–8 days" },
+    { city: "Your City", fee: 0, time: "2–4 days" },
+    { city: "Town A", fee: 500, time: "3–5 days" },
+    { city: "Town B", fee: 800, time: "3–5 days" },
+    { city: "City C", fee: 1500, time: "4–6 days" },
+    { city: "City D", fee: 2500, time: "6–8 days" },
   ],
   /** Shown under the city list. */
   deliveryNote: "Other cities in India on request",
@@ -195,7 +195,7 @@ export const store = {
 
   // ── Announcement bar (top of every page). Leave empty to hide. ─────────
   /** SAMPLE */
-  announcements: ["🪔 Diwali Sale: up to 30% off", "Free delivery & installation in Bhopal", "No-cost EMI available"],
+  announcements: ["🪔 Diwali Sale: up to 30% off", "Free delivery & installation in Your City", "No-cost EMI available"],
 
   // ── Home page hero ─────────────────────────────────────────────────────
   hero: {
@@ -204,9 +204,9 @@ export const store = {
     focus: "50% 60%",
     alt: "Living room with a grey corner sofa and an oak coffee table",
     /** SAMPLE */
-    eyebrow: "Furniture showroom in MP Nagar, Bhopal",
+    eyebrow: "Furniture showroom in Sample Market, Your City",
     title: "Sofas, beds & dining sets in solid wood",
-    subtitle: "Made to your size. Free delivery in Bhopal.",
+    subtitle: "Made to your size. Free delivery in Your City.",
     /** Small facts under the buttons. */
     highlights: ["Since 2012", "Made in India", "Free installation"],
     /** Price tag pinned on the photo for the piece shown. Set to null to hide. SAMPLE */
@@ -225,7 +225,7 @@ export const store = {
     { icon: "flag", value: "Made in India", label: "in our own workshop" },
     { icon: "shield", value: "Up to 5 years", label: "warranty" },
     { icon: "tools", value: "Free", label: "installation" },
-    { icon: "truck", value: "Free delivery", label: "within Bhopal" },
+    { icon: "truck", value: "Free delivery", label: "within Your City" },
   ] as { icon: IconName; value: string; label: string }[],
 
   /** Your overall rating. Set to null to hide. SAMPLE */
@@ -243,7 +243,7 @@ export const store = {
   reviews: [
     {
       name: "Ritika S.",
-      city: "Bhopal",
+      city: "Your City",
       rating: 5,
       text: "Got our 6 seater dining set in sheesham. Finish is exactly like the showroom piece and they installed it the same day.",
       product: "Regent Walnut Dining Set",
@@ -252,7 +252,7 @@ export const store = {
     },
     {
       name: "Amit P.",
-      city: "Indore",
+      city: "City C",
       rating: 5,
       text: "Wanted an L-shape sofa 6 inches shorter than the standard one. They made it to size in 15 days with the fabric I picked.",
       product: "Custom L-Shape Sofa",
@@ -260,7 +260,7 @@ export const store = {
     },
     {
       name: "Neha & Rahul",
-      city: "Bhopal",
+      city: "Your City",
       rating: 4,
       text: "Good range of beds. Delivery was a day late but the team kept us updated on WhatsApp throughout.",
       product: "King Size Bed",
@@ -268,7 +268,7 @@ export const store = {
     },
     {
       name: "Mohd. Faisal",
-      city: "Sehore",
+      city: "Town A",
       rating: 5,
       text: "Visited the showroom twice before buying. No pressure, clear prices, and the wardrobe quality is solid.",
       product: "3 Door Wardrobe",
@@ -283,7 +283,7 @@ export const store = {
   testimonials: [
     {
       name: "Ritika & Saurabh Sharma",
-      city: "Arera Colony, Bhopal",
+      city: "Sample Nagar, Your City",
       photo: "/images/banners/banner_3.webp",
       product: "6 seater sheesham dining set",
       rating: 5,
@@ -292,7 +292,7 @@ export const store = {
     },
     {
       name: "Amit Patel",
-      city: "Vijay Nagar, Indore",
+      city: "City C",
       photo: "/images/products/l-shape-sofa/1.webp",
       product: "Custom L-shape sofa",
       rating: 5,
@@ -301,7 +301,7 @@ export const store = {
     },
     {
       name: "Neha Verma",
-      city: "Kolar Road, Bhopal",
+      city: "Your City",
       photo: "/images/banners/banner_1.webp",
       product: "King size bed with storage",
       rating: 5,
@@ -334,7 +334,7 @@ export const store = {
       { title: "Share your size", detail: "Send a photo or room measurements on WhatsApp" },
       { title: "Pick material & finish", detail: "Sheesham, teak, plywood · 200+ fabrics" },
       { title: "We make it", detail: "In our own workshop, with photo updates" },
-      { title: "Delivered & installed", detail: "By our own team, free in Bhopal" },
+      { title: "Delivered & installed", detail: "By our own team, free in Your City" },
     ],
     /** What you make to order. */
     examples: ["Sofas", "Beds", "Wardrobes", "TV units", "Dining sets", "Modular kitchens"],
@@ -347,12 +347,12 @@ export const store = {
     url: "https://www.instagram.com/",
     /** Photos of delivered orders work best. */
     images: [
-      { src: "/images/products/Coffee%20Tables/Coffee_Tables_1.webp", caption: "Nesting tables · Arera Colony" },
-      { src: "/images/products/sofa-set/3.webp", caption: "Leather sofa set · Kolar Road" },
-      { src: "/images/products/bed/Bed_25.webp", caption: "Carved four-poster bed · Indore" },
-      { src: "/images/products/dining/14.webp", caption: "6 seater dining · Shahpura" },
-      { src: "/images/products/Coffee%20Tables/Coffee_Tables_3.webp", caption: "Bone inlay tables · Bawadia Kalan" },
-      { src: "/images/products/wardrobe/Wordrobe_8.webp", caption: "Walnut 4 door wardrobe · Awadhpuri" },
+      { src: "/images/products/Coffee%20Tables/Coffee_Tables_1.webp", caption: "Nesting tables · Your City" },
+      { src: "/images/products/sofa-set/3.webp", caption: "Leather sofa set · Town A" },
+      { src: "/images/products/bed/Bed_25.webp", caption: "Carved four-poster bed · City C" },
+      { src: "/images/products/dining/14.webp", caption: "6 seater dining · Your City" },
+      { src: "/images/products/Coffee%20Tables/Coffee_Tables_3.webp", caption: "Bone inlay tables · Town B" },
+      { src: "/images/products/wardrobe/Wordrobe_8.webp", caption: "Walnut 4 door wardrobe · Your City" },
     ],
   },
 
@@ -363,7 +363,7 @@ export const store = {
     subtitle: "WhatsApp, call or walk in. We usually reply within an hour during showroom hours.",
     /** Common questions. SAMPLE: edit to match your policies. */
     faqs: [
-      { q: "Do you deliver outside Bhopal?", a: "Yes. See the delivery charges above, or WhatsApp us for a quote for any other city." },
+      { q: "Do you deliver outside Your City?", a: "Yes. See the delivery charges above, or WhatsApp us for a quote for any other city." },
       { q: "Can I change the size, fabric or polish?", a: "Most pieces can be made to your size, in your choice of fabric and wood finish. Custom orders are ready in 15–21 days." },
       { q: "Do you offer EMI?", a: "No-cost EMI for 3, 6 and 12 months is available on major credit cards." },
       { q: "Is installation included?", a: "Yes. Our own carpenters deliver and install every order free of cost." },
@@ -373,8 +373,8 @@ export const store = {
 
   // ── About page. SAMPLE ─────────────────────────────────────────────────
   about: {
-    title: "A family furniture business in Bhopal since 2012",
-    points: ["Our own workshop and carpenters", "Showroom open 7 days a week", "Delivered to 5,000+ homes across MP"],
+    title: "A family furniture business since 2012",
+    points: ["Our own workshop and carpenters", "Showroom open 7 days a week", "Delivered to 5,000+ homes in the region"],
     image: "/images/banners/banner_3.webp",
   },
 

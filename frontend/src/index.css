@@ -159,7 +159,7 @@
 
   /* Horizontal scroller with snap, used on phones for rows of cards. */
   .scroll-row {
-    @apply -mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto px-4 pb-2 sm:-mx-6 sm:px-6;
+    @apply -mx-4 flex snap-x snap-mandatory scroll-px-4 gap-3 overflow-x-auto px-4 pb-2 sm:-mx-6 sm:scroll-px-6 sm:px-6;
     scrollbar-width: none;
   }
   .scroll-row::-webkit-scrollbar {

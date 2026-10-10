@@ -38,7 +38,18 @@ export function CreditBar() {
   return (
     <div className="sticky top-0 z-50 bg-black text-white">
       <div className="container-page flex h-9 items-center justify-center gap-3 text-[11px] sm:text-xs">
-        <p className="truncate text-white/80">{credit.text}</p>
+        <p className="truncate text-white/80">
+          {credit.text.split(credit.linkText).map((part, i) => (
+            <span key={i}>
+              {i > 0 && (
+                <a href={credit.url} target="_blank" rel="noopener" className="font-semibold text-white underline underline-offset-2 hover:text-orange-400">
+                  {credit.linkText}
+                </a>
+              )}
+              {part}
+            </span>
+          ))}
+        </p>
         <a
           href={credit.url}
           target="_blank"

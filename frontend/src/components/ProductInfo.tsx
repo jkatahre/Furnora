@@ -1,10 +1,10 @@
-import { useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { store } from "../config/store";
 import { useEnquiry } from "../context/EnquiryContext";
 import type { Category, Product } from "../types/product";
 import { openStatus, telUrl, whatsappLink } from "../utils/contact";
-import { formatPrice, inShowroom, isCustomisable, leadTime, priceMode, showsPrice, statusLabels, toInches } from "../utils/format";
+import { inShowroom, isCustomisable, leadTime, priceMode, showsPrice, statusLabels, toInches } from "../utils/format";
 import { CheckIcon, LeafIcon, PaletteIcon, PhoneIcon, RulerIcon, ShieldIcon, StoreIcon, ToolsIcon, TruckIcon, WhatsAppIcon } from "./Icons";
 import PriceTag from "./PriceTag";
 import { Stars } from "./Rating";
@@ -92,8 +92,6 @@ export default function ProductInfo({ product, category }: ProductInfoProps) {
         </div>
       )}
 
-      <DeliveryCheck />
-
       {/* Actions */}
       <div className="mt-6 space-y-3">
         {product.buy_url && available && (
@@ -132,41 +130,6 @@ function Fact({ icon, label, children }: { icon: ReactNode; label: string; child
         <dt className="text-xs text-muted">{label}</dt>
         <dd className="mt-0.5 text-sm font-semibold leading-snug">{children}</dd>
       </div>
-    </div>
-  );
-}
-
-/** Pick a city, see the delivery charge and time. */
-function DeliveryCheck() {
-  const areas = store.deliveryAreas;
-  const [city, setCity] = useState(areas[0]?.city ?? "");
-  const area = areas.find((a) => a.city === city);
-  if (areas.length === 0) return null;
-  return (
-    <div className="mt-5 rounded-xl bg-surface p-4">
-      <label className="flex flex-wrap items-center gap-x-3 gap-y-2">
-        <span className="flex items-center gap-2 text-sm font-semibold">
-          <TruckIcon width={18} height={18} className="text-brand" /> Deliver to
-        </span>
-        <select value={city} onChange={(e) => setCity(e.target.value)} className="min-h-11 flex-1 rounded-lg border border-line bg-canvas px-3 text-[15px] font-semibold">
-          {areas.map((a) => (
-            <option key={a.city}>{a.city}</option>
-          ))}
-          <option value="">Other city</option>
-        </select>
-      </label>
-      <p className="mt-2 text-sm" aria-live="polite">
-        {area ? (
-          <>
-            <span className={area.fee === 0 ? "font-semibold text-success" : "font-semibold"}>
-              {area.fee === 0 ? "Free delivery" : `Delivery ${formatPrice(area.fee)}`}
-            </span>{" "}
-            · {area.time} · {store.policies.installation.toLowerCase().startsWith("free") ? "free installation" : "installation available"}
-          </>
-        ) : (
-          <span className="text-muted">{store.deliveryNote}. WhatsApp us for a quote.</span>
-        )}
-      </p>
     </div>
   );
 }

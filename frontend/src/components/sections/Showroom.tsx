@@ -86,7 +86,6 @@ export default function Showroom({ heading = "h2", showMap = true }: { heading?:
             </a>
           </div>
 
-          <DeliveryAreas className="mt-6" />
         </div>
       </div>
 
