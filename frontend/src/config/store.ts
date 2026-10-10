@@ -219,16 +219,6 @@ export const store = {
     ],
   },
 
-  // ── Offers (home page offer cards). Leave empty to hide. ───────────────
-  /** SAMPLE */
-  offers: [
-    { title: "Diwali Sale", detail: "Up to 30% off sofas & beds", link: "/catalog?sort=price-asc&category=sofas,beds", highlight: true },
-    { title: "Free Delivery", detail: "Anywhere in Bhopal", link: "/contact#delivery" },
-    { title: "No-cost EMI", detail: "3, 6 & 12 months on cards", link: "/contact" },
-    { title: "Exchange Offer", detail: "Bring your old sofa, get up to ₹5,000 off", link: "/contact" },
-    { title: "Custom Furniture", detail: "Made to your size from ₹14,999", link: "/custom-furniture" },
-  ] as { title: string; detail: string; link: string; highlight?: boolean }[],
-
   // ── Trust badges ("Why choose us"). Only list what is true. ────────────
   /** SAMPLE */
   trust: [

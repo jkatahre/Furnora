@@ -3,18 +3,15 @@ import { Link } from "react-router-dom";
 import { store } from "../../config/store";
 import { categories } from "../../data/categories";
 import { products } from "../../data/products";
-import { openStatus, whatsappLink } from "../../utils/contact";
 import { effectivePrice, formatPrice } from "../../utils/format";
 import { Diya, festivalLive, Sparkles, Toran } from "../Festive";
-import { ArrowRightIcon, CheckIcon, ChevronLeftIcon, ChevronRightIcon, PinIcon, WhatsAppIcon } from "../Icons";
-import { RatingBadge } from "../Rating";
+import { ArrowRightIcon, CheckIcon, ChevronLeftIcon, ChevronRightIcon } from "../Icons";
 
 /** Festival banners while a sale is on, otherwise the regular store hero. */
 export default function Hero() {
   return (
     <>
       {festivalLive() ? <FestivalBanners /> : <StoreHero />}
-      <StoreStrip />
       <QuickLinks />
     </>
   );
@@ -197,36 +194,6 @@ function StoreHero() {
         </div>
       </div>
     </section>
-  );
-}
-
-/** Who and where: location, open status, rating and the two main actions. */
-function StoreStrip() {
-  const { hero } = store;
-  const status = openStatus();
-  return (
-    <div className="border-b border-line bg-surface">
-      <div className="container-page flex flex-col gap-3 py-3 sm:flex-row sm:items-center sm:justify-between sm:py-4">
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] sm:text-sm">
-          <span className="flex items-center gap-1.5 font-semibold">
-            <PinIcon width={16} height={16} className="text-brand" /> {hero.eyebrow}
-          </span>
-          <span className={`flex items-center gap-1.5 ${status.open ? "text-success" : "text-muted"}`}>
-            <span className={`h-2 w-2 rounded-full ${status.open ? "bg-success" : "bg-muted"}`} aria-hidden="true" />
-            {status.label}
-          </span>
-          <RatingBadge className="hidden min-h-0 lg:inline-flex" />
-        </div>
-        <div className="grid grid-cols-2 gap-2 sm:flex sm:gap-3">
-          <Link to="/catalog" className="btn-primary">
-            Shop furniture
-          </Link>
-          <a href={whatsappLink("general")} target="_blank" rel="noopener" className="btn-whatsapp">
-            <WhatsAppIcon /> WhatsApp us
-          </a>
-        </div>
-      </div>
-    </div>
   );
 }
 

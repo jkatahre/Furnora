@@ -5,7 +5,6 @@ import SectionHeading from "../components/SectionHeading";
 import { FestivalDeals, FestivalStrip } from "../components/sections/FestivalOffer";
 import Hero from "../components/sections/Hero";
 import CustomFurniture from "../components/sections/CustomFurniture";
-import Offers from "../components/sections/Offers";
 import RecentWork from "../components/sections/RecentWork";
 import Testimonials from "../components/sections/Testimonials";
 import ShopByCategory from "../components/sections/ShopByCategory";
@@ -32,7 +31,6 @@ export default function Home() {
     <>
       <Hero />
       <FestivalStrip />
-      <Offers />
 
       {data ? (
         <ShopByCategory categories={categories} stats={stats} />
