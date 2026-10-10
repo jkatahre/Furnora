@@ -45,6 +45,15 @@ export const productService = {
     return respond(sortProducts(available, "newest", featuredProductIds).slice(0, limit));
   },
 
+  /** Available, photographed products with the biggest discounts, for the festival deals row. */
+  getDeals(limit = 8): Promise<Product[]> {
+    const discount = (p: Product) => (p.sale_price && p.sale_price < p.base_price ? (p.base_price - p.sale_price) / p.base_price : 0);
+    const deals = products
+      .filter((p) => p.status === "active" && productImageFiles[p.slug] && discount(p) > 0)
+      .sort((a, b) => discount(b) - discount(a));
+    return respond(deals.slice(0, limit));
+  },
+
   async getProductBySlug(slug: string): Promise<Product> {
     const product = products.find((p) => p.slug === slug);
     if (!product) {

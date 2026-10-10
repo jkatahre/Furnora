@@ -38,7 +38,7 @@ export default function ProductInfo({ product, category }: ProductInfoProps) {
         )}
       </div>
 
-      <h1 className="mt-2 text-[1.75rem] leading-tight sm:text-4xl">{product.name}</h1>
+      <h1 className="mt-1.5 text-[1.45rem] leading-tight sm:mt-2 sm:text-4xl">{product.name}</h1>
 
       <div className="mt-4">
         <PriceTag product={product} size="lg" details />

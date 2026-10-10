@@ -38,8 +38,8 @@ export default function ShopByRoom({ categories, stats }: { categories: Category
               <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink/70 via-ink/0 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 p-3 text-white sm:p-5">
                 <div>
-                  <h3 className="text-lg font-bold text-white sm:text-xl">{room.name}</h3>
-                  <p className="text-[13px] text-white/85">{room.count} {room.count === 1 ? "design" : "designs"}</p>
+                  <h3 className="text-[15px] font-bold text-white sm:text-xl">{room.name}</h3>
+                  <p className="text-xs text-white/85 sm:text-[13px]">{room.count} {room.count === 1 ? "design" : "designs"}</p>
                 </div>
                 <span className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-ink sm:flex">
                   <ArrowRightIcon width={18} height={18} />

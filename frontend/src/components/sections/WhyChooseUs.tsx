@@ -12,11 +12,11 @@ export default function WhyChooseUs() {
         <SectionHeading title={`Why buy from ${store.name}`} action={<div className="hidden sm:block"><RatingBadge /></div>} />
         <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
           {store.trust.map((item) => (
-            <li key={item.value + item.label} className="flex flex-col gap-3 rounded-xl bg-canvas p-4 sm:p-5">
-              <StoreIcon name={item.icon} width={28} height={28} className="text-brand" />
+            <li key={item.value + item.label} className="flex flex-col gap-2 rounded-xl bg-canvas p-3 sm:gap-3 sm:p-5">
+              <StoreIcon name={item.icon} width={24} height={24} className="text-brand sm:h-7 sm:w-7" />
               <p>
-                <span className="block text-[17px] font-bold leading-tight">{item.value}</span>
-                <span className="text-sm text-muted">{item.label}</span>
+                <span className="block text-[14px] font-bold leading-tight sm:text-[17px]">{item.value}</span>
+                <span className="text-xs text-muted sm:text-sm">{item.label}</span>
               </p>
             </li>
           ))}

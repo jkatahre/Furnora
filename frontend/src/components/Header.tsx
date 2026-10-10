@@ -5,6 +5,7 @@ import { categories } from "../data/categories";
 import { useEnquiry } from "../context/EnquiryContext";
 import { openStatus, telUrl, whatsappLink } from "../utils/contact";
 import { ChevronRightIcon, ClockIcon, CloseIcon, MenuIcon, PhoneIcon, PinIcon, SearchIcon, WhatsAppIcon } from "./Icons";
+import { festivalLive } from "./Festive";
 import SearchBar from "./SearchBar";
 
 const headerCategories = store.headerCategories
@@ -43,7 +44,7 @@ export function AnnouncementBar() {
 
   if (items.length === 0) return null;
   return (
-    <div className="bg-brand-dark text-white">
+    <div className={`${festivalLive() ? "bg-festive-dark" : "bg-brand-dark"} text-white`}>
       <div className="container-page flex h-9 items-center justify-center gap-6 text-[13px] font-medium lg:justify-between">
         <p key={index} className="animate-[fadeIn_.5s_ease] truncate lg:hidden" aria-live="polite">
           {items[index]}

@@ -61,12 +61,12 @@ export default function Testimonials({ showReviews = true }: { showReviews?: boo
                 >
                   <figure className="grid h-full overflow-hidden rounded-2xl bg-canvas md:grid-cols-2">
                     <SmartImage src={story.photo} alt={`${story.product} at ${story.name}'s home`} className="aspect-[4/3] md:aspect-auto md:min-h-[380px]" />
-                    <div className="flex flex-col justify-center p-5 sm:p-8 lg:p-12">
-                      <span className="font-display text-6xl leading-none text-brand/30" aria-hidden="true">
+                    <div className="flex flex-col justify-center p-4 sm:p-8 lg:p-12">
+                      <span className="hidden font-display text-6xl leading-none text-brand/30 sm:block" aria-hidden="true">
                         “
                       </span>
                       <Stars value={story.rating} size={18} />
-                      <blockquote className="mt-3 text-[17px] leading-relaxed text-ink sm:text-xl">{story.quote}</blockquote>
+                      <blockquote className="mt-2 line-clamp-4 text-[14px] leading-relaxed text-ink sm:mt-3 sm:line-clamp-none sm:text-xl">{story.quote}</blockquote>
                       <figcaption className="mt-5 flex items-center gap-3">
                         <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand text-base font-bold text-white" aria-hidden="true">
                           {story.name.charAt(0)}
@@ -103,12 +103,12 @@ export default function Testimonials({ showReviews = true }: { showReviews?: boo
         )}
 
         {showReviews && store.reviews.length > 0 && (
-          <div className="mt-8">
+          <div className="mt-4 sm:mt-8">
             <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-              <h3 className="text-lg font-bold">Recent reviews</h3>
+              <h3 className="hidden text-lg font-bold sm:block">Recent reviews</h3>
               <RatingBadge />
             </div>
-            <ul className="scroll-row md:mx-0 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:px-0 lg:grid-cols-4">
+            <ul className="scroll-row hidden sm:flex md:mx-0 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:px-0 lg:grid-cols-4">
               {store.reviews.map((review) => (
                 <li key={review.name + review.date} className="w-[82%] shrink-0 sm:w-[48%] md:w-auto">
                   <ReviewCard review={review} />

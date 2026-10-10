@@ -18,7 +18,7 @@ export const products: Product[] = [
     description:
       "A contemporary three-seater sofa designed with a solid frame and comfortable premium upholstery.",
     base_price: 34999,
-    sale_price: 31999,
+    sale_price: 24499,
     brand: "Furnora",
     material: "Premium Fabric",
     style: "Modern",
@@ -366,7 +366,7 @@ export const products: Product[] = [
     description:
       "A grey L-shape sofa with a deep chaise and a built-in storage arm.",
     base_price: 89999,
-    sale_price: 80999,
+    sale_price: 66999,
     brand: "Furnora",
     material: "Premium Fabric",
     style: "Contemporary",
@@ -932,7 +932,7 @@ export const products: Product[] = [
     description:
       "Cognac leather with scrolled arms and contrast piping.",
     base_price: 86999,
-    sale_price: 78999,
+    sale_price: 69999,
     brand: "Furnora Atelier",
     material: "Leather",
     style: "Classic",
@@ -1547,7 +1547,7 @@ export const products: Product[] = [
     description:
       "A channel-stitched emerald wingback headboard.",
     base_price: 62999,
-    sale_price: 56999,
+    sale_price: 46999,
     brand: "Furnora Studio",
     material: "Velvet",
     style: "Contemporary",
@@ -2160,6 +2160,7 @@ export const products: Product[] = [
     description:
       "A tufted navy wingback bed with hidden storage.",
     base_price: 62999,
+    sale_price: 44999,
     brand: "Furnora Atelier",
     material: "Velvet",
     style: "Contemporary",
@@ -2554,7 +2555,7 @@ export const products: Product[] = [
     description:
       "A walnut top on gold crossed legs with six curved-back chairs.",
     base_price: 104999,
-    sale_price: 94999,
+    sale_price: 81999,
     brand: "Furnora Atelier",
     material: "Solid Sheesham & Brass",
     style: "Classic",
@@ -3022,7 +3023,7 @@ export const products: Product[] = [
     description:
       "Black side doors framing a walnut-finish centre.",
     base_price: 58999,
-    sale_price: 53999,
+    sale_price: 46999,
     brand: "Furnora",
     material: "Engineered Wood",
     style: "Modern",
@@ -3616,7 +3617,7 @@ export const products: Product[] = [
     description:
       "Three round tables that nest together or stand apart: a fluted drum with a stone top, a solid sheesham top and a live-edge slab on metal legs. Dimensions refer to the largest table.",
     base_price: 12999,
-    sale_price: 10999,
+    sale_price: 9099,
     brand: "Furnora Studio",
     material: "Solid Sheesham",
     style: "Contemporary",

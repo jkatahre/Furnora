@@ -139,9 +139,56 @@ export const store = {
     emi: { enabled: true, months: 12, minPrice: 15000, note: "No-cost EMI on major credit cards" },
   },
 
+  // ── Festival sale (Diwali, Holi, New Year…). Set `active: false` after the sale. ──
+  festival: {
+    active: true,
+    name: "Diwali",
+    /** When the sale ends (India time). The countdown hides itself after this. SAMPLE */
+    endsAt: "2026-11-15T23:59:00+05:30",
+    /** Badge on discounted products while the sale is on. */
+    badge: "Diwali Offer",
+    /** Extra coupon shown in the festive strip. Set to null to hide. SAMPLE */
+    coupon: { code: "DIWALI2000", text: "Extra ₹2,000 off on orders above ₹50,000" } as { code: string; text: string } | null,
+    /** Title of the deals row on the home page (products with the biggest discounts). */
+    dealsTitle: "Diwali deals",
+    /**
+     * Hero banners. `priceFrom` lists category slugs: the banner then shows "from ₹…" using the
+     * lowest current price in those categories, so it never goes out of date.
+     */
+    slides: [
+      {
+        image: "/images/banners/banner_2.webp",
+        focus: "45% 60%",
+        alt: "Living room with a grey corner sofa",
+        offer: "Up to 30% off",
+        title: "Diwali Sofa Sale",
+        priceFrom: ["sofas", "l-shape-sofas", "sofa-sets"],
+        cta: { label: "Shop sofas", link: "/catalog?category=sofas,l-shape-sofas,sofa-sets&sort=price-asc" },
+      },
+      {
+        image: "/images/banners/banner_1.webp",
+        focus: "55% 60%",
+        alt: "Bedroom with an upholstered king size bed",
+        offer: "Free installation",
+        title: "New bed for Diwali",
+        priceFrom: ["beds"],
+        cta: { label: "Shop beds", link: "/catalog?category=beds" },
+      },
+      {
+        image: "/images/banners/banner_3.webp",
+        focus: "60% 55%",
+        alt: "Dining room with a solid wood dining table",
+        offer: "No-cost EMI",
+        title: "Dining sets for family dinners",
+        priceFrom: ["dining-tables"],
+        cta: { label: "Shop dining", link: "/catalog?category=dining-tables" },
+      },
+    ] as { image: string; focus: string; alt: string; offer: string; title: string; priceFrom: string[]; cta: { label: string; link: string } }[],
+  },
+
   // ── Announcement bar (top of every page). Leave empty to hide. ─────────
   /** SAMPLE */
-  announcements: ["Festive Sale: up to 30% off sofas & beds", "Free delivery & installation in Bhopal", "No-cost EMI available"],
+  announcements: ["🪔 Diwali Sale: up to 30% off", "Free delivery & installation in Bhopal", "No-cost EMI available"],
 
   // ── Home page hero ─────────────────────────────────────────────────────
   hero: {
@@ -175,7 +222,7 @@ export const store = {
   // ── Offers (home page offer cards). Leave empty to hide. ───────────────
   /** SAMPLE */
   offers: [
-    { title: "Festive Sale", detail: "Up to 30% off sofas & beds", link: "/catalog?category=sofas,beds", highlight: true },
+    { title: "Diwali Sale", detail: "Up to 30% off sofas & beds", link: "/catalog?sort=price-asc&category=sofas,beds", highlight: true },
     { title: "Free Delivery", detail: "Anywhere in Bhopal", link: "/contact#delivery" },
     { title: "No-cost EMI", detail: "3, 6 & 12 months on cards", link: "/contact" },
     { title: "Exchange Offer", detail: "Bring your old sofa, get up to ₹5,000 off", link: "/contact" },

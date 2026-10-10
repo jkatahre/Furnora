@@ -19,7 +19,7 @@ export default function Showroom({ heading = "h2", showMap = true }: { heading?:
         <div className="space-y-2 sm:space-y-3 lg:col-span-6">
           {main && <SmartImage src={main.src} alt={main.alt} className="aspect-[16/10] rounded-xl" />}
           {more.length > 0 && (
-            <div className="grid gap-2 sm:gap-3" style={{ gridTemplateColumns: `repeat(${Math.min(more.length, 3)}, minmax(0, 1fr))` }}>
+            <div className="hidden gap-2 sm:grid sm:gap-3" style={{ gridTemplateColumns: `repeat(${Math.min(more.length, 3)}, minmax(0, 1fr))` }}>
               {more.slice(0, 3).map((photo) => (
                 <SmartImage key={photo.src} src={photo.src} alt={photo.alt} className="aspect-[4/3] rounded-xl" />
               ))}
@@ -65,7 +65,7 @@ export default function Showroom({ heading = "h2", showMap = true }: { heading?:
           </div>
 
           {showroom.highlights.length > 0 && (
-            <ul className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm">
+            <ul className="mt-5 hidden flex-wrap gap-x-5 gap-y-2 text-sm sm:flex">
               {showroom.highlights.map((h) => (
                 <li key={h} className="flex items-center gap-1.5">
                   <CheckIcon width={16} height={16} className="text-success" /> {h}

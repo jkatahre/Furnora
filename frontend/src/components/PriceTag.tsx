@@ -27,13 +27,13 @@ export default function PriceTag({ product, size = "sm", details = false }: Pric
     <div>
       {mode === "starting_from" && <p className={`text-muted ${large ? "text-sm" : "text-xs"}`}>Starting from</p>}
       <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-        <span className={`font-bold tracking-tight text-ink ${large ? "text-[2rem] leading-none" : "text-lg leading-tight"}`}>
+        <span className={`font-bold tracking-tight text-ink ${large ? "text-[1.6rem] leading-none sm:text-[2rem]" : "text-[15px] leading-tight sm:text-lg"}`}>
           {discounted && <span className="sr-only">Price </span>}
           {formatPrice(effectivePrice(product))}
         </span>
         {discounted && (
           <>
-            <span className={`text-muted ${large ? "text-base" : "text-[13px]"}`}>
+            <span className={`text-muted ${large ? "text-sm sm:text-base" : "text-[11px] sm:text-[13px]"}`}>
               MRP <span className="line-through">{formatPrice(product.base_price)}</span>
             </span>
             <span className={`font-bold text-sale ${large ? "text-base" : "hidden text-[13px] sm:inline"}`}>{discountPercent(product)}% off</span>

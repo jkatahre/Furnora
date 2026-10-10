@@ -27,6 +27,12 @@
   --color-whatsapp-dark: #1ebe5d;
   --color-whatsapp-deep: #128c7e;
 
+  /* Festival sale colours. */
+  --color-festive: #7a1020;
+  --color-festive-dark: #520a15;
+  --color-festive-soft: #fff4e2;
+  --color-gold: #f2b233;
+
   --color-success: #2f7a3e;
   --color-warning: #94650f;
   --color-danger: #a23b2a;
@@ -44,7 +50,7 @@
 }
 
 @utility btn {
-  @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg px-5 text-[15px] font-semibold leading-tight transition-colors duration-200 select-none;
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 text-sm font-semibold leading-tight transition-colors duration-200 select-none sm:min-h-12 sm:px-5 sm:text-[15px];
 }
 
 @layer base {
@@ -57,8 +63,15 @@
 
   body {
     @apply bg-canvas font-sans text-ink;
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  @media (min-width: 640px) {
+    body {
+      font-size: 15px;
+      line-height: 1.6;
+    }
   }
 
   h1,
@@ -97,11 +110,11 @@
 
 @layer components {
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.14em] text-brand;
+    @apply text-[11px] font-semibold uppercase tracking-[0.14em] text-brand sm:text-xs;
   }
 
   .section-title {
-    @apply font-display text-[1.75rem] leading-tight sm:text-4xl;
+    @apply font-display text-[1.35rem] leading-tight sm:text-4xl;
   }
 
   .btn-primary {
@@ -126,7 +139,7 @@
   }
 
   .chip {
-    @apply inline-flex min-h-10 items-center gap-2 whitespace-nowrap rounded-full border border-line bg-paper px-4 text-sm font-medium text-ink-soft transition-colors hover:border-ink/40 hover:text-ink;
+    @apply inline-flex min-h-9 items-center gap-2 whitespace-nowrap rounded-full border border-line bg-paper px-3.5 text-[13px] font-medium sm:min-h-10 sm:px-4 sm:text-sm text-ink-soft transition-colors hover:border-ink/40 hover:text-ink;
   }
   .chip-active {
     @apply border-ink bg-ink text-white hover:border-ink hover:text-white;
@@ -219,4 +232,19 @@
   to {
     transform: translateX(-50%);
   }
+}
+
+@keyframes flicker {
+  0%, 100% { transform: scale(1) rotate(-2deg); }
+  50% { transform: scale(1.08, 0.94) rotate(2deg); }
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(0.6); }
+  50% { opacity: 1; transform: scale(1); }
 }
