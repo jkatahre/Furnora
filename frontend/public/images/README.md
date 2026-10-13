@@ -41,73 +41,70 @@ Available keys: `main`, `front`, `side`, `back`, `lifestyle`, `detail`.
 | File | Product |
 | --- | --- |
 | `Sofa_1.webp` | Lumen Curved 3 Seater Sofa |
-| `Sofa_2.webp` | Haven Deep-Seat 3 Seater Sofa |
-| `Sofa_3.webp` | Sage Low Modular Sofa |
-| `Sofa_4.webp` | Fern Organic Curve Sofa |
-| `Sofa_5.webp` | Atlas Adjustable Headrest Sofa |
-| `Sofa_7.webp` | Moss Bouclé 3 Seater Sofa |
-| `Sofa_8.webp` | Weave Strap Sofa |
-| `Sofa_9.webp` | Vertex Console Sofa |
-| `Sofa_10.webp` | Duo Console Lounge Sofa |
-| `Sofa_11.webp` | Modern 3 Seater Sofa |
-| `Sofa_12.webp` | Crescent Curved Sofa |
-| `Sofa_13.webp` | Riviera Velvet Sofa |
-| `Sofa_14.webp` | Dune Modular Sofa |
+| `Sofa_2.webp` | Forest Green Wave-Back 3 Seater Sofa |
+| `Sofa_3.webp` | Charcoal Deep-Seat 3 Seater Sofa |
+| `Sofa_4.webp` | Olive 3 Seater Sofa with Laptop Tray |
+| `Sofa_5.webp` | Charcoal Adjustable-Headrest Sofa with Charging Port |
+| `Sofa_6.webp` | Olive Low-Plinth 3 Seater Sofa |
+| `Sofa_7.webp` | Woven Strap 3 Seater Sofa |
+| `Sofa_8.webp` | Graphite Modular Sofa with Centre Console |
+| `Sofa_9.webp` | Taupe Bouclé 2 Seater Sofa with Console |
+| `Sofa_10.webp` | Charcoal 3 Seater Sofa with Fold-Down Console |
+| `Sofa_11.webp` | Mint Curved Sofa with Side Tables |
+| `Sofa_12.webp` | Navy Velvet 4 Seater Sofa with Adjustable Backs |
+| `Sofa_13.webp` | Ivory 3 Seater Sofa with Side Shelf |
 
 **L-Shape Sofas** (`products/l-shape-sofa/`)
 
 | File | Product |
 | --- | --- |
-| `1.webp` | Arlo L-Shape Sofa with Storage Arm |
-| `2.webp` | Graphite Corner Sectional |
-| `3.webp` | Emerald Chesterfield Corner Sofa |
-| `4.webp` | Ivory Channel L-Shape Sofa |
-| `5.webp` | Verdant Tufted Sectional |
-| `6.webp` | Ashford L-Shape Sofa |
+| `1.webp` | Charcoal Modular Corner Sofa |
+| `2.webp` | Emerald Tufted Corner Sofa |
+| `3.webp` | Grey L-Shape Sofa with Wooden Legs |
+| `4.webp` | Ivory Bouclé Curved Sectional |
+| `5.webp` | Emerald Chesterfield Chaise Sofa |
+| `6.webp` | Sheesham Frame L-Shape Sofa |
 | `7.webp` | Oatmeal Chaise Sectional |
-| `8.webp` | Curve Bouclé Sectional |
-| `9.webp` | Jade Velvet Chaise Sofa |
-| `10.webp` | Timber Frame Corner Sofa |
-| `11.webp` | Lumina Sculpted Sectional |
-| `12.webp` | Lumina Sculpted Sectional, Low Back |
-| `13.webp` | Skyline U-Shape Sectional |
-| `14.webp` | Skyline U-Shape Sectional, Ivory |
-| `15.webp` | Loft Metal-Frame L Sofa |
-| `16.webp` | Loft Metal-Frame L Sofa, Open End |
-| `17.webp` | Cloud Chaise Lounge Sofa |
-| `18.webp` | Olive L-Shape Sofa with Storage Arm |
-| `19.webp` | Harbor L-Shape Sofa |
-| `20.webp` | Charcoal Chaise Sectional |
-| `21.webp` | Metro Chaise Sectional |
-| `22.webp` | Marina U-Shaped Sectional |
+| `8.webp` | Sculpted Cream Corner Sofa with Console |
+| `9.webp` | Ivory U-Shape Lounge Sectional |
+| `10.webp` | Navy & Ivory Curved U-Shape Sectional |
+| `11.webp` | Linen Metal-Frame Chaise Sofa |
+| `12.webp` | Denim Blue Modular U-Shape Sofa |
+| `13.webp` | Sand Metal-Frame L-Shape Sofa |
+| `14.webp` | Graphite Tufted Chaise Sofa |
+| `15.webp` | Charcoal Velvet Chaise Sofa |
+| `16.webp` | Olive Velvet L-Shape Sofa with Storage Arm |
+| `17.webp` | Ivory Bouclé Chaise Sofa |
+| `18.webp` | Grey Low-Profile Chaise Sectional |
+| `19.webp` | Ivory Channel-Tufted L-Shape Sofa |
+| `20.webp` | Forest Green Chesterfield Corner Sofa |
+| `21.webp` | Grey L-Shape Sofa with Storage Arm |
 
 **Sofa Sets** (`products/sofa-set/`)
 
 | File | Product |
 | --- | --- |
-| `1.webp` | Saffron Patterned Sofa Set (3+2+1) |
-| `2.webp` | Rosa Floral Sofa Set (3+1+1) |
-| `3.webp` | Cognac Leather Sofa Set (3+1+1) |
-| `4.webp` | Azure Velvet Sofa Set (3+1+1) |
-| `5.webp` | Forest Sofa Set (3+2+1) |
+| `1.webp` | Mustard Patterned Sofa Set (3+2+1) |
+| `2.webp` | Floral Velvet Sofa Set (3+1+1) |
+| `3.webp` | Cognac Leather Sofa Set (3+2+1) |
+| `4.webp` | Royal Blue Velvet Sofa Set (3+1+1) |
+| `5.webp` | Olive Velvet Sofa Set (3+2+1) |
 | `6.webp` | Kilim Pattern Sofa Set (3+2+1) |
 | `7.webp` | Tan Leather Sofa Set (3+2+1) |
 | `8.webp` | Olive Chesterfield Sofa Set (3+2+1) |
-| `9.webp` | Wave Sofa Set (3+1+1) |
-| `10.webp` | Stone Grey Sofa Set (3+1+1) |
+| `9.webp` | Navy & White Sculpted Sofa Set (3+1+1) |
+| `10.webp` | Stone Grey Sofa Set (3+2+1) |
 | `11.webp` | Denim Blue Sofa Set (3+2+1) |
-| `12.webp` | Charcoal Sofa Set (3+2+1) |
-| `13.webp` | Ivory Lounge Sofa Set |
-| `14.webp` | Navy Classic Sofa Set (3+2+1) |
-| `15.webp` | Teak Frame Sofa Set (3+1+1) |
-| `16.webp` | Graphite Tufted Sofa Set (3+1+1) |
-| `17.webp` | Cobalt Bouclé Sofa Set (3+1+1) |
-| `18.webp` | Pebble Grey Bouclé Sofa Set (3+1+1) |
-| `19.webp` | Midnight Velvet Sofa Set with Ottoman |
-| `20.webp` | Walnut Frame Sofa Set, Navy (3+1+1) |
-| `22.webp` | Ember Sofa Set (3+1+1) |
-| `23.webp` | Onyx Sofa Set (3+2) |
-| `24.webp` | Urban Sofa Set with Ottoman |
+| `12.webp` | Ivory Lounge Sofa Set with Ottoman |
+| `13.webp` | Teak Frame Sofa Set (3+1+1) |
+| `14.webp` | Charcoal Tufted Sofa Set (3+1+1) |
+| `15.webp` | Indigo Bouclé Sofa Set (2+1+1) |
+| `16.webp` | Grey Quilted Sofa Set (2+1+1) |
+| `17.webp` | Navy Velvet Sofa Set with Ottoman |
+| `18.webp` | Sheesham Wood Sofa Set, Navy (3+1+1) |
+| `19.webp` | Grey Sofa with Accent Chairs (3+1+1) |
+| `20.webp` | Charcoal Sofa Set (2+1+1) |
+| `21.webp` | Grey Velvet Sofa & Chaise Set (3+2) |
 
 **Beds** (`products/bed/`)
 
@@ -123,24 +120,24 @@ Available keys: `main`, `front`, `side`, `back`, `lifestyle`, `detail`.
 | `Bed_8.webp` | Basket-Weave Leather Bed |
 | `Bed_9.webp` | Ridge Slatted Walnut Bed |
 | `Bed_10.webp` | Teal Wingback Upholstered Bed |
-| `Bed_11.webp` | Fan Shell Velvet Bed |
-| `Bed_12.webp` | Terracotta Weave Bed |
-| `Bed_13.webp` | Ivory Quilted Panel Bed |
+| `Bed_11.webp` | Charcoal Fan-Panel Upholstered Bed |
+| `Bed_12.webp` | Woven Leather Headboard Bed |
+| `Bed_13.webp` | Ivory Pebble-Panel Upholstered Bed |
 | `Bed_14.webp` | Oak Platform Bed |
-| `Bed_15.webp` | Iron Canopy Bed |
-| `Bed_16.webp` | Navy Velvet Wingback Bed |
-| `Bed_17.webp` | Natural Oak Channel Bed |
-| `Bed_18.webp` | Canopy Bed with Leather Headboard |
-| `Bed_19.webp` | Wrought Iron Four-Poster Bed |
-| `Bed_20.webp` | Regal Four-Poster Bed, Navy |
-| `Bed_21.webp` | Emerald Channel Upholstered Bed |
-| `Bed_22.webp` | Nordic Oak Low Bed |
-| `Bed_23.webp` | Rustic Log Bed |
-| `Bed_24.webp` | Cane Tufted Bed |
-| `Bed_25.webp` | Heritage Carved Four-Poster Bed |
+| `Bed_15.webp` | Carved Four-Poster Canopy Bed |
+| `Bed_16.webp` | Natural Teak Low Platform Bed |
+| `Bed_17.webp` | Walnut Floating Platform Bed with LED |
+| `Bed_18.webp` | Chocolate Tufted Wingback Bed |
+| `Bed_19.webp` | Iron Canopy Bed |
+| `Bed_20.webp` | Royal Blue Wingback Bed |
+| `Bed_21.webp` | Oak Panel Headboard Bed |
+| `Bed_22.webp` | Leather Weave Canopy Bed |
+| `Bed_23.webp` | Wrought Iron Four-Poster Bed with Storage |
+| `Bed_24.webp` | Navy Velvet Four-Poster Bed |
+| `Bed_25.webp` | Emerald Channel Wingback Bed |
 | `Bed_26.webp` | Hampton Light Wood Bed |
-| `Bed_27.webp` | Floating LED Platform Bed |
-| `Bed_28.webp` | Chesterfield Tall Headboard Bed |
+| `Bed_27.webp` | Rustic Log Bed |
+| `Bed_28.webp` | Cane & Rattan Tufted Bed |
 | `Bed_29.webp` | Haiku Slatted Bed |
 | `Bed_30.webp` | Navy Tufted Storage Bed |
 | `Bed_31.webp` | Cove Slatted Walnut Bed |
@@ -149,10 +146,10 @@ Available keys: `main`, `front`, `side`, `back`, `lifestyle`, `detail`.
 
 | File | Product |
 | --- | --- |
-| `Chair_1.webp` | Teal Lounge Armchair |
-| `Chair_2.webp` | Pebble Lounge Chair with Side Tray |
-| `Chair_3.webp` | Cloud Barrel Swivel Chair |
-| `Chair_4.webp` | Orbit Velvet Barrel Chair |
+| `1.webp` | Teal Bouclé Accent Chairs (Set of 2) |
+| `2.webp` | Ivory Lounge Chair with Walnut Side Tray |
+| `3.webp` | Sherpa Barrel Swivel Chair |
+| `4.webp` | Two-Tone Velvet Barrel Chair |
 
 **Dining Tables** (`products/dining/`)
 
@@ -170,7 +167,6 @@ Available keys: `main`, `front`, `side`, `back`, `lifestyle`, `detail`.
 | `13.webp` | Slate Dining Set (4 Seater) |
 | `14.webp` | Regent Walnut Dining Set (6 Seater) |
 | `15.webp` | Pillar Round Dining Set (4 Seater) |
-| `16.webp` | Pillar Round Dining Set, Open Back (4 Seater) |
 | `17.webp` | Totem Round Dining Set (6 Seater) |
 | `18.webp` | Grove Round Dining Set, Ivory (6 Seater) |
 | `19.webp` | Atrium Dining Set (6 Seater) |

@@ -210,7 +210,7 @@ export const store = {
     /** Small facts under the buttons. */
     highlights: ["Since 2012", "Made in India", "Free installation"],
     /** Price tag pinned on the photo for the piece shown. Set to null to hide. SAMPLE */
-    tag: { label: "Corner sofa, as shown", price: "from ₹80,999", link: "/catalog?category=l-shape-sofas" } as {
+    tag: { label: "Corner sofa, as shown", price: "from ₹66,999", link: "/catalog?category=l-shape-sofas" } as {
       label: string;
       price: string;
       link: string;
@@ -349,7 +349,7 @@ export const store = {
     images: [
       { src: "/images/products/Coffee%20Tables/Coffee_Tables_1.webp", caption: "Nesting tables · Your City" },
       { src: "/images/products/sofa-set/3.webp", caption: "Leather sofa set · Town A" },
-      { src: "/images/products/bed/Bed_25.webp", caption: "Carved four-poster bed · City C" },
+      { src: "/images/products/bed/Bed_15.webp", caption: "Carved four-poster bed · City C" },
       { src: "/images/products/dining/14.webp", caption: "6 seater dining · Your City" },
       { src: "/images/products/Coffee%20Tables/Coffee_Tables_3.webp", caption: "Bone inlay tables · Town B" },
       { src: "/images/products/wardrobe/Wordrobe_8.webp", caption: "Walnut 4 door wardrobe · Your City" },
